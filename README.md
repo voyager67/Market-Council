@@ -1,3 +1,5 @@
+> **Repository import status:** The GitHub repository has been initialized and this landing README is committed. The complete 1.0.0 source tree has **not** yet been imported. This repository is not a complete runnable release until the contents of the final source ZIP are extracted into the repository root and committed. The ZIP contains the complete README with images/video and all source assets; copying its `market-council/` contents into this repository will replace this temporary notice.
+
 # MarketCouncil
 
 > **One Market. Fifteen Specialists. No Unchallenged Thesis.**
