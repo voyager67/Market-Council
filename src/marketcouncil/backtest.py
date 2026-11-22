@@ -107,7 +107,7 @@ def run_backtest(bars: list[Bar], strategy: Strategy, config: BacktestConfig | N
             raise ValueError("bars contain inconsistent OHLC bounds")
         if bar.timestamp.tzinfo is None or bar.timestamp.utcoffset() is None:
             raise ValueError("bar timestamps must be timezone-aware")
-    for previous, current in zip(bars, bars[1:]):
+    for previous, current in zip(bars, bars[1:]):  # noqa: B905 - adjacent-bar pairs intentionally differ in length
         if current.timestamp <= previous.timestamp:
             raise ValueError("bars must be strictly ascending")
     if not getattr(strategy, "name", None):

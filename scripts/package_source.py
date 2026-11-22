@@ -25,7 +25,32 @@ EXCLUDED_DIRS = {
     "build",
     "dist",
 }
+EXCLUDED_LOCAL_DATA_DIRS = {"data", "var", "reports"}
 EXCLUDED_FILES = {".DS_Store", "Thumbs.db"}
+
+
+def is_sensitive_source_path(path: Path) -> bool:
+    """Identify local secrets, databases, and user data that never belong in releases."""
+    rel = path.relative_to(ROOT)
+    if any(part.lower() in EXCLUDED_LOCAL_DATA_DIRS for part in rel.parts[:-1]):
+        return True
+
+    name = path.name.lower()
+    if name.endswith(".env.example"):
+        return False
+    if name in {".env", ".envrc", "id_rsa", "id_ed25519"}:
+        return True
+    if name.startswith(".env.") or name.endswith(".env"):
+        return True
+    if Path(name).suffix.lower() in {".pem", ".p12", ".pfx", ".key"}:
+        return True
+    return any(
+        name.endswith(suffix)
+        for suffix in (
+            ".sqlite", ".sqlite3", ".sqlite-wal", ".sqlite-shm", ".sqlite-journal",
+            ".db", ".db-wal", ".db-shm", ".db-journal",
+        )
+    )
 
 
 def include(path: Path) -> bool:
@@ -36,12 +61,11 @@ def include(path: Path) -> bool:
         return False
     if path.name.endswith(".egg-info"):
         return False
-    if path.name == ".env" or path.name.startswith(".env."):
+    if is_sensitive_source_path(path):
         return False
     if path.is_symlink() or not path.is_file():
         return False
     return True
-
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()

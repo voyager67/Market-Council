@@ -1,9 +1,9 @@
 import pytest
 
 fastapi = pytest.importorskip("fastapi")
-from fastapi.testclient import TestClient
+from fastapi.testclient import TestClient  # noqa: E402
 
-from marketcouncil.api import create_app
+from marketcouncil.api import create_app  # noqa: E402
 
 
 def test_authenticated_api_paper_flow_is_tenant_scoped(tmp_path, monkeypatch):

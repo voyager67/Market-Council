@@ -165,22 +165,52 @@ def validate_markdown_links(errors: list[str]) -> int:
     return count
 
 
+def is_forbidden_secret_filename(filename: str) -> bool:
+    """Return True for local environment, credential and database files."""
+    name = Path(filename).name.lower()
+    if name in {"id_rsa", "id_ed25519", ".envrc"}:
+        return True
+    if name.endswith(".env.example"):
+        return False
+    if name == ".env" or name.startswith(".env.") or name.endswith(".env"):
+        return True
+    if Path(name).suffix.lower() in {".pem", ".p12", ".pfx", ".key"}:
+        return True
+    return any(
+        name.endswith(suffix)
+        for suffix in (
+            ".sqlite", ".sqlite3", ".sqlite-wal", ".sqlite-shm", ".sqlite-journal",
+            ".db", ".db-wal", ".db-shm", ".db-journal",
+        )
+    )
+
+
 def validate_secrets(errors: list[str]) -> int:
     checked = 0
     secret_patterns = [
         re.compile(r"-----BEGIN (?:RSA |OPENSSH |EC |DSA )?PRIVATE KEY-----"),
-        re.compile(r"\bgh[pousr]_[A-Za-z0-9_]{30,}\b"),
-        re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
-        re.compile(r"\bsk-[A-Za-z0-9]{32,}\b"),
+        re.compile(r"\\bgh[pousr]_[A-Za-z0-9_]{30,}\\b"),
+        re.compile(r"\\bAKIA[0-9A-Z]{16}\\b"),
+        re.compile(r"\\bsk-[A-Za-z0-9]{32,}\\b"),
     ]
-    forbidden_names = {".env", ".env.local", ".env.production", "id_rsa", "id_ed25519"}
     for path in ROOT.rglob("*"):
-        if not path.is_file() or any(part in {".git", ".venv", "build", "dist", ".pytest_cache", "__pycache__"} or part.endswith(".egg-info") for part in path.parts):
+        if not path.is_file() or any(
+            part in {".git", ".venv", "build", "dist", ".pytest_cache", "__pycache__"}
+            or part.endswith(".egg-info")
+            for part in path.parts
+        ):
             continue
-        if path.name in forbidden_names or path.suffix.lower() in {".pem", ".p12", ".pfx", ".key"}:
-            errors.append(f"potential secret/private-key file present: {path.relative_to(ROOT)}")
+        relative = path.relative_to(ROOT)
+        if any(part.lower() in {"data", "var", "reports"} for part in relative.parts[:-1]):
+            errors.append(f"local data/report directory must not be committed: {relative}")
             continue
-        if path.suffix.lower() not in {".py", ".md", ".json", ".yaml", ".yml", ".toml", ".txt", ".ini", ".cfg"}:
+        if is_forbidden_secret_filename(path.name):
+            errors.append(f"potential secret/private-key/database file present: {relative}")
+            continue
+        if path.suffix.lower() not in {
+            ".py", ".md", ".json", ".yaml", ".yml", ".toml", ".txt", ".ini",
+            ".cfg", ".csv", ".svg", ".html", ".sh", ".ps1", ".example",
+        }:
             continue
         try:
             data = path.read_text(encoding="utf-8")
@@ -189,10 +219,9 @@ def validate_secrets(errors: list[str]) -> int:
         checked += 1
         for pattern in secret_patterns:
             if pattern.search(data):
-                errors.append(f"potential credential pattern in {path.relative_to(ROOT)}")
+                errors.append(f"potential credential pattern in {relative}")
                 break
     return checked
-
 
 def main() -> int:
     errors: list[str] = []

@@ -1,66 +1,48 @@
-# Publishing MarketCouncil 1.0.0
+# Release process
 
-This source archive is prepared for publication, but it is **not yet hosted on GitHub**. The connected GitHub workspace had no existing MarketCouncil repository, and the available GitHub actions do not create a new repository. A repository owner must create the empty repository and push this source tree.
+This document defines the release checks for maintainers of the MarketCouncil repository.
 
-## Suggested GitHub repository settings
+## Release readiness
 
-- **Repository name:** `MarketCouncil` (or `market-council` if preferred)
-- **Visibility:** Public, if you intend to build an open-source trader community
-- **Description:** `Multi-agent trading research platform with 74 trader skills, REST and WebSocket market data, historical backtesting, paper trading, and risk-focused workflows.`
-- **Website:** leave blank until a documentation site or project website is actually deployed
-- **Topics:** `trading`, `algorithmic-trading`, `quantitative-finance`, `multi-agent-systems`, `llm-agents`, `market-research`, `technical-analysis`, `risk-management`, `portfolio-management`, `options-trading`, `futures-trading`, `crypto-trading`, `python`, `litellm`
-- **License:** MIT (the `LICENSE` file is already included)
-- **Default branch:** `main`
+Before tagging a release:
 
-Do not add a second README, license, or `.gitignore` during repository creation. This archive already contains them.
+- Confirm the version in `pyproject.toml` and the release notes in `CHANGELOG.md` agree.
+- Review the complete diff for credentials, customer information, private market data, local databases and generated build artefacts.
+- Run repository validation, generated-index checks, lint, tests, static security analysis, dependency auditing, package build and the offline demo.
+- Confirm every required GitHub Actions matrix job passes.
+- Review security and dependency findings and document accepted limitations.
 
-## 1. Create the empty GitHub repository
+## Reproducible checks
 
-On GitHub, choose **New repository**, enter the name above, select Public or Private according to your release decision, and leave **Add a README**, **Add .gitignore**, and **Choose a license** unchecked. Create the empty repository.
+Run these commands from a clean checkout:
 
-## 2. Push the source tree from Windows PowerShell
-
-Install Git for Windows if `git --version` is not recognised. Download `MarketCouncil-1.0.0-FINAL.zip` from the prepared handoff, then run the following commands (adjust the download location and GitHub owner/repository URL):
-
-```powershell
-$ProjectRoot = Join-Path $HOME "Projects"
-New-Item -ItemType Directory -Force -Path $ProjectRoot | Out-Null
-Expand-Archive -LiteralPath (Join-Path $HOME "Downloads\MarketCouncil-1.0.0-FINAL.zip") -DestinationPath $ProjectRoot -Force
-Set-Location (Join-Path $ProjectRoot "market-council")
-
-git init -b main
-git add --all
-git status --short
-git commit -m "Release MarketCouncil 1.0.0"
-git remote add origin https://github.com/<YOUR_GITHUB_OWNER>/<YOUR_REPOSITORY>.git
-git push -u origin main
+```bash
+python -m pip install -e ".[dev,api,stream]"
+python scripts/validate_repository.py
+python scripts/build_skill_index.py --check
+python scripts/build_skill_catalog.py --check
+ruff check .
+pytest -q
+bandit -q -r src/marketcouncil
+pip-audit
+python -m build
+market-council demo --format json
 ```
 
-Replace the angle-bracket placeholders with the repository owner and exact repository name. Review `git status --short` before committing. Never add API keys, private market data, account exports, `.env` files, or customer information.
+Build deterministic source archives with:
 
-## 3. Verify the first hosted CI run
+```bash
+python scripts/package_source.py --output-dir ./release-artifacts
+```
 
-After pushing, open the repository's **Actions** tab. The included workflow runs on Python 3.11, 3.12, and 3.13. Confirm that all matrix jobs pass. If a job fails, fix the source and rerun the checks before publishing a release tag. Ruff is part of hosted CI; it was not available in the offline build environment used to prepare this archive.
+Verify the generated SHA-256 manifest after copying or downloading release artefacts. Never commit populated environment files, private keys, database files, local datasets or account exports.
 
-## 4. Publish the single final release
+## Version and release assets
 
-After the first hosted CI run is green:
+Use a version tag in the form `vMAJOR.MINOR.PATCH`. Create release notes from the corresponding `CHANGELOG.md` entry. Attach the source ZIP, source TAR.GZ, Python wheel and checksum manifest only after those artefacts have been produced and verified.
 
-1. Open **Releases → Draft a new release**.
-2. Create tag `v1.0.0` on branch `main`.
-3. Use title `MarketCouncil 1.0.0 — Final`.
-4. Attach `MarketCouncil-1.0.0-FINAL.zip`, `MarketCouncil-1.0.0-FINAL.tar.gz`, `marketcouncil-1.0.0-py3-none-any.whl`, and `MarketCouncil-1.0.0-SHA256SUMS.txt`.
-5. Copy the release notes from `CHANGELOG.md` and publish.
+The release description must state the implemented scope accurately. MarketCouncil provides research workflows, optional market-data integrations, a single-instrument OHLCV backtester, and paper/testnet adapters. It does not include live-money order routing or guarantee research accuracy, fills or trading performance.
 
-The project is marked as the final consolidated snapshot for this brief. Describe the implemented REST market-data snapshots, read-only WebSocket tick streams, single-instrument backtester, local paper simulator, Alpaca Paper and Binance Spot Testnet LIMIT adapters accurately. Do not imply automatic stream recovery, tick persistence, venue-grade backtesting, or live-money execution. Do not promise that no security fixes will ever be needed; "final" describes the planned feature/release scope, not a guarantee that software never requires maintenance.
+## Post-release review
 
-## 5. Post-publication checks
-
-- Confirm the repository homepage renders the local SVG, GIF, still images, and MP4 link. GitHub's Markdown renderer may handle embedded video controls differently from a local Markdown preview; the direct MP4 link is included as a fallback.
-- Confirm the `v1.0.0` release contains all four artifacts and that the checksum manifest verifies after download.
-- Confirm the repository visibility, branch protection, issue settings, and security reporting options match your intended community policy.
-- Do not enable or advertise hosted AI analysis until the provider and model have been tested with non-sensitive sample data and their retention/region policies reviewed.
-
-## What the repository owner must supply
-
-The owner must create the repository, choose its visibility and namespace, authenticate Git, push the first commit, inspect GitHub Actions, and publish the release. Those actions require access to the owner's GitHub account and cannot be completed by this local packaging environment.
+After publishing, verify the release page contains the intended tag and assets, checksums match, and the README's local images and video links render. Record release-specific limitations and continue dependency and security maintenance.

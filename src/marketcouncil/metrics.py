@@ -23,7 +23,7 @@ def build_snapshot(
     if bars_per_year is not None and bars_per_year <= 0:
         raise ValueError("bars_per_year must be a positive integer")
     closes = [bar.close for bar in bars]
-    returns = [current / previous - 1 for previous, current in zip(closes, closes[1:])]
+    returns = [current / previous - 1 for previous, current in zip(closes, closes[1:])]  # noqa: B905 - adjacent-close pairs intentionally differ in length
     observed_returns = returns[-20:]
     realised = statistics.stdev(observed_returns) if len(observed_returns) >= 2 else None
     annualised = None
