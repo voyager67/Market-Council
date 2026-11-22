@@ -1,0 +1,911 @@
+{
+  "schema_version": 1,
+  "project": "MarketCouncil",
+  "project_version": "1.0.0",
+  "skills": {
+    "backtest-integrity": {
+      "name": "backtest-integrity",
+      "description": "Audit a backtest for look-ahead, survivorship, leakage, overfitting, unrealistic fills, and hidden costs.",
+      "domain": "strategy validation",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/backtest-integrity/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/backtest-integrity/SKILL.md",
+      "version": 1
+    },
+    "bear-case-development": {
+      "name": "bear-case-development",
+      "description": "Construct the strongest conditional downside thesis and identify fragile assumptions in the prevailing narrative.",
+      "domain": "adversarial thesis",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/bear-case-development/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/bear-case-development/SKILL.md",
+      "version": 1
+    },
+    "breadth-regime-confirmation": {
+      "name": "breadth-regime-confirmation",
+      "description": "Evaluate market participation, breadth thrusts, deterioration, and benchmark alignment without treating a single breadth statistic as a signal.",
+      "domain": "market internals",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures"
+      ],
+      "path": "skills/breadth-regime-confirmation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/breadth-regime-confirmation/SKILL.md",
+      "version": 1
+    },
+    "breakout-trade-planning": {
+      "name": "breakout-trade-planning",
+      "description": "Convert a confirmed breakout research setup into a conditional plan with trigger, risk budget, failure criteria and liquidity checks.",
+      "domain": "trade planning",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures",
+        "crypto"
+      ],
+      "path": "skills/breakout-trade-planning/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/breakout-trade-planning/SKILL.md",
+      "version": 1
+    },
+    "bull-case-development": {
+      "name": "bull-case-development",
+      "description": "Construct the strongest conditional upside thesis using only supplied evidence and explicit confirmation requirements.",
+      "domain": "adversarial thesis",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/bull-case-development/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/bull-case-development/SKILL.md",
+      "version": 1
+    },
+    "catalyst-verification": {
+      "name": "catalyst-verification",
+      "description": "Verify company and market catalysts against timestamped primary sources before incorporating them into a thesis.",
+      "domain": "event research",
+      "asset_classes": [
+        "equities",
+        "commodities",
+        "crypto"
+      ],
+      "path": "skills/catalyst-verification/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/catalyst-verification/SKILL.md",
+      "version": 1
+    },
+    "contrarian-setup-validation": {
+      "name": "contrarian-setup-validation",
+      "description": "Test contrarian trade ideas against crowded positioning, asymmetric payoff, catalyst quality and explicit invalidation conditions.",
+      "domain": "contrarian research",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures",
+        "FX",
+        "crypto"
+      ],
+      "path": "skills/contrarian-setup-validation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/contrarian-setup-validation/SKILL.md",
+      "version": 1
+    },
+    "cot-positioning": {
+      "name": "cot-positioning",
+      "description": "Interpret CFTC Commitments of Traders data with correct report type, participant category, open-interest denominator, and reporting lag.",
+      "domain": "futures positioning",
+      "asset_classes": [
+        "futures",
+        "commodities",
+        "FX"
+      ],
+      "path": "skills/cot-positioning/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/cot-positioning/SKILL.md",
+      "version": 1
+    },
+    "cross-asset-correlation": {
+      "name": "cross-asset-correlation",
+      "description": "Assess dependence across assets using aligned returns, regime splits, tail co-movement, and concentration rather than relying on one correlation matrix.",
+      "domain": "cross-asset risk",
+      "asset_classes": [
+        "equities",
+        "rates",
+        "FX",
+        "commodities",
+        "crypto"
+      ],
+      "path": "skills/cross-asset-correlation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/cross-asset-correlation/SKILL.md",
+      "version": 1
+    },
+    "cross-sector-theme-detection": {
+      "name": "cross-sector-theme-detection",
+      "description": "Identify cross-sector and thematic leadership using transparent classifications, ETF proxies and constituent confirmation.",
+      "domain": "sector and thematic research",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/cross-sector-theme-detection/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/cross-sector-theme-detection/SKILL.md",
+      "version": 1
+    },
+    "crypto-microstructure": {
+      "name": "crypto-microstructure",
+      "description": "Assess digital-asset venue, funding, basis, liquidation, and order-book risks with venue-specific context.",
+      "domain": "digital asset markets",
+      "asset_classes": [
+        "crypto spot",
+        "perpetuals",
+        "futures"
+      ],
+      "path": "skills/crypto-microstructure/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/crypto-microstructure/SKILL.md",
+      "version": 1
+    },
+    "crypto-regime-assessment": {
+      "name": "crypto-regime-assessment",
+      "description": "Assess crypto market structure across venue liquidity, funding, basis, open interest, volatility, and cross-asset context.",
+      "domain": "digital asset research",
+      "asset_classes": [
+        "crypto spot",
+        "perpetuals",
+        "futures"
+      ],
+      "path": "skills/crypto-regime-assessment/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/crypto-regime-assessment/SKILL.md",
+      "version": 1
+    },
+    "data-quality-audit": {
+      "name": "data-quality-audit",
+      "description": "Audit market and fundamental datasets for schema validity, temporal integrity, symbol mapping, stale observations, and source provenance.",
+      "domain": "data engineering",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/data-quality-audit/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/data-quality-audit/SKILL.md",
+      "version": 1
+    },
+    "distribution-day-risk": {
+      "name": "distribution-day-risk",
+      "description": "Review potential distribution clusters, failed rallies, and market-top conditions using predeclared definitions and multiple confirming measures.",
+      "domain": "market risk",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/distribution-day-risk/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/distribution-day-risk/SKILL.md",
+      "version": 1
+    },
+    "dividend-policy-review": {
+      "name": "dividend-policy-review",
+      "description": "Review dividend sustainability, policy intent, balance-sheet capacity and the quality of cash available for distributions.",
+      "domain": "dividend and income research",
+      "asset_classes": [
+        "equities",
+        "REITs",
+        "ETFs"
+      ],
+      "path": "skills/dividend-policy-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/dividend-policy-review/SKILL.md",
+      "version": 1
+    },
+    "dividend-sustainability": {
+      "name": "dividend-sustainability",
+      "description": "Assess dividend coverage, cash generation, leverage, capital needs, payout policy, and the risk that distributions are unsustainable.",
+      "domain": "income equity research",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/dividend-sustainability/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/dividend-sustainability/SKILL.md",
+      "version": 1
+    },
+    "dividend-tax-jurisdiction-check": {
+      "name": "dividend-tax-jurisdiction-check",
+      "description": "Create a jurisdiction-aware checklist for dividend tax research without providing individual tax advice.",
+      "domain": "tax and income due diligence",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "ADRs",
+        "REITs"
+      ],
+      "path": "skills/dividend-tax-jurisdiction-check/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/dividend-tax-jurisdiction-check/SKILL.md",
+      "version": 1
+    },
+    "downtrend-duration-study": {
+      "name": "downtrend-duration-study",
+      "description": "Characterise the duration, depth and recovery profile of downtrends without assuming historical drawdown patterns will repeat.",
+      "domain": "market regime research",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "indices"
+      ],
+      "path": "skills/downtrend-duration-study/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/downtrend-duration-study/SKILL.md",
+      "version": 1
+    },
+    "drawdown-circuit-breaker": {
+      "name": "drawdown-circuit-breaker",
+      "description": "Apply trader-defined drawdown thresholds and portfolio risk limits as deterministic stop-and-review gates.",
+      "domain": "risk controls",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/drawdown-circuit-breaker/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/drawdown-circuit-breaker/SKILL.md",
+      "version": 1
+    },
+    "earnings-calendar-planning": {
+      "name": "earnings-calendar-planning",
+      "description": "Build an earnings event calendar with verified timing, source provenance, and explicit pre/post-event exposure questions.",
+      "domain": "event research",
+      "asset_classes": [
+        "equities",
+        "options"
+      ],
+      "path": "skills/earnings-calendar-planning/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/earnings-calendar-planning/SKILL.md",
+      "version": 1
+    },
+    "earnings-reaction-study": {
+      "name": "earnings-reaction-study",
+      "description": "Study post-earnings price reactions and potential drift while controlling event selection, benchmark moves, and transaction-cost assumptions.",
+      "domain": "event-driven research",
+      "asset_classes": [
+        "equities",
+        "options"
+      ],
+      "path": "skills/earnings-reaction-study/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/earnings-reaction-study/SKILL.md",
+      "version": 1
+    },
+    "economic-calendar-brief": {
+      "name": "economic-calendar-brief",
+      "description": "Turn official economic release schedules into timestamped event-risk briefs with scenario channels and data-vintage awareness.",
+      "domain": "macro event research",
+      "asset_classes": [
+        "equities",
+        "fixed income",
+        "FX",
+        "commodities",
+        "futures"
+      ],
+      "path": "skills/economic-calendar-brief/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/economic-calendar-brief/SKILL.md",
+      "version": 1
+    },
+    "edge-candidate-pipeline": {
+      "name": "edge-candidate-pipeline",
+      "description": "Convert observations into a ranked research queue while preserving traceability from raw hint to testable strategy concept.",
+      "domain": "strategy discovery operations",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/edge-candidate-pipeline/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/edge-candidate-pipeline/SKILL.md",
+      "version": 1
+    },
+    "event-cohort-study": {
+      "name": "event-cohort-study",
+      "description": "Construct event cohorts to study price and volume behaviour around defined catalysts with reproducible sample rules.",
+      "domain": "event-driven quantitative research",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures",
+        "crypto"
+      ],
+      "path": "skills/event-cohort-study/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/event-cohort-study/SKILL.md",
+      "version": 1
+    },
+    "failed-news-reaction-analysis": {
+      "name": "failed-news-reaction-analysis",
+      "description": "Study cases where price failed to confirm a news narrative, separating reaction patterns from causal interpretation.",
+      "domain": "news and event reaction",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "FX",
+        "commodities",
+        "crypto"
+      ],
+      "path": "skills/failed-news-reaction-analysis/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/failed-news-reaction-analysis/SKILL.md",
+      "version": 1
+    },
+    "fundamental-quality": {
+      "name": "fundamental-quality",
+      "description": "Assess issuer operating quality from supplied primary-source financial statements and disclosures.",
+      "domain": "equity research",
+      "asset_classes": [
+        "equities"
+      ],
+      "path": "skills/fundamental-quality/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/fundamental-quality/SKILL.md",
+      "version": 1
+    },
+    "futures-contract-sizing": {
+      "name": "futures-contract-sizing",
+      "description": "Translate futures price risk into contract-level currency exposure using verified contract multipliers, tick values, expiry, and margin assumptions.",
+      "domain": "derivatives risk",
+      "asset_classes": [
+        "futures"
+      ],
+      "path": "skills/futures-contract-sizing/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/futures-contract-sizing/SKILL.md",
+      "version": 1
+    },
+    "futures-roll-and-term-structure": {
+      "name": "futures-roll-and-term-structure",
+      "description": "Examine futures curve shape, roll yield, contract transitions, and continuous-series construction without conflating synthetic prices with tradable contracts.",
+      "domain": "derivatives market structure",
+      "asset_classes": [
+        "futures",
+        "commodities",
+        "rates",
+        "equity indices"
+      ],
+      "path": "skills/futures-roll-and-term-structure/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/futures-roll-and-term-structure/SKILL.md",
+      "version": 1
+    },
+    "fx-macro-positioning": {
+      "name": "fx-macro-positioning",
+      "description": "Frame FX research around relative macro drivers, central-bank policy, carry, valuation, and currency-specific risk rather than single-variable narratives.",
+      "domain": "foreign exchange research",
+      "asset_classes": [
+        "FX",
+        "rates",
+        "commodities"
+      ],
+      "path": "skills/fx-macro-positioning/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/fx-macro-positioning/SKILL.md",
+      "version": 1
+    },
+    "growth-stock-screening": {
+      "name": "growth-stock-screening",
+      "description": "Screen growth companies using transparent sales, earnings, quality, liquidity, and relative-strength criteria with point-in-time data controls.",
+      "domain": "equity screening",
+      "asset_classes": [
+        "equities"
+      ],
+      "path": "skills/growth-stock-screening/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/growth-stock-screening/SKILL.md",
+      "version": 1
+    },
+    "institutional-13f-research": {
+      "name": "institutional-13f-research",
+      "description": "Interpret institutional ownership disclosures with filing dates, reporting lags, manager identity and position-scope caveats.",
+      "domain": "institutional ownership research",
+      "asset_classes": [
+        "US equities"
+      ],
+      "path": "skills/institutional-13f-research/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/institutional-13f-research/SKILL.md",
+      "version": 1
+    },
+    "institutional-ownership-flow": {
+      "name": "institutional-ownership-flow",
+      "description": "Assess reported institutional ownership and flow proxies while respecting filing lags, disclosure thresholds, and the difference between holdings and current trading.",
+      "domain": "ownership and flow research",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/institutional-ownership-flow/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/institutional-ownership-flow/SKILL.md",
+      "version": 1
+    },
+    "liquidity-execution": {
+      "name": "liquidity-execution",
+      "description": "Evaluate execution feasibility from supplied volume, spread, depth, venue, and order constraints.",
+      "domain": "market microstructure",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/liquidity-execution/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/liquidity-execution/SKILL.md",
+      "version": 1
+    },
+    "macro-event-risk": {
+      "name": "macro-event-risk",
+      "description": "Map macroeconomic releases, policy events, and cross-asset sensitivities into scenario risks.",
+      "domain": "macro research",
+      "asset_classes": [
+        "equities",
+        "fixed income",
+        "FX",
+        "commodities"
+      ],
+      "path": "skills/macro-event-risk/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/macro-event-risk/SKILL.md",
+      "version": 1
+    },
+    "market-breadth": {
+      "name": "market-breadth",
+      "description": "Evaluate participation and breadth from constituent-level advances, declines, new highs/lows, and participation series.",
+      "domain": "market internals",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/market-breadth/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/market-breadth/SKILL.md",
+      "version": 1
+    },
+    "market-environment-regime-analysis": {
+      "name": "market-environment-regime-analysis",
+      "description": "Build a cross-market regime description from price, volatility, rates, breadth, credit and liquidity inputs with dated evidence.",
+      "domain": "macro and market regime",
+      "asset_classes": [
+        "equities",
+        "rates",
+        "FX",
+        "commodities",
+        "crypto"
+      ],
+      "path": "skills/market-environment-regime-analysis/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/market-environment-regime-analysis/SKILL.md",
+      "version": 1
+    },
+    "market-maker-microstructure": {
+      "name": "market-maker-microstructure",
+      "description": "Interpret order-book and trade-flow snapshots with venue, sequence, depth, and latency constraints explicitly represented.",
+      "domain": "market microstructure",
+      "asset_classes": [
+        "equities",
+        "futures",
+        "crypto"
+      ],
+      "path": "skills/market-maker-microstructure/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/market-maker-microstructure/SKILL.md",
+      "version": 1
+    },
+    "market-regime": {
+      "name": "market-regime",
+      "description": "Classify the prevailing regime from supplied price, volatility, breadth, and macro evidence without treating a label as a forecast.",
+      "domain": "market research",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/market-regime/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/market-regime/SKILL.md",
+      "version": 1
+    },
+    "market-top-risk-assessment": {
+      "name": "market-top-risk-assessment",
+      "description": "Evaluate distribution clusters, trend failure, volatility expansion and breadth deterioration as a probabilistic market-risk review.",
+      "domain": "market risk and regime",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures"
+      ],
+      "path": "skills/market-top-risk-assessment/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/market-top-risk-assessment/SKILL.md",
+      "version": 1
+    },
+    "momentum-episodic-pivot": {
+      "name": "momentum-episodic-pivot",
+      "description": "Evaluate abrupt repricing events and sustained momentum using event timing, liquidity, relative strength, and post-event behaviour.",
+      "domain": "momentum strategies",
+      "asset_classes": [
+        "equities"
+      ],
+      "path": "skills/momentum-episodic-pivot/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/momentum-episodic-pivot/SKILL.md",
+      "version": 1
+    },
+    "multi-factor-universe-screening": {
+      "name": "multi-factor-universe-screening",
+      "description": "Design transparent multi-factor screens with point-in-time inputs, sector-aware comparisons and explicit missing-value policy.",
+      "domain": "equity screening methodology",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/multi-factor-universe-screening/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/multi-factor-universe-screening/SKILL.md",
+      "version": 1
+    },
+    "news-reaction-analysis": {
+      "name": "news-reaction-analysis",
+      "description": "Assess how price and liquidity responded to a timestamped news item without confusing temporal sequence with causation.",
+      "domain": "news and event research",
+      "asset_classes": [
+        "equities",
+        "FX",
+        "commodities",
+        "crypto"
+      ],
+      "path": "skills/news-reaction-analysis/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/news-reaction-analysis/SKILL.md",
+      "version": 1
+    },
+    "options-strategy-analysis": {
+      "name": "options-strategy-analysis",
+      "description": "Compare option structures through payoff, Greeks, volatility surface, liquidity, expiry, assignment, and scenario analysis.",
+      "domain": "options research",
+      "asset_classes": [
+        "options",
+        "equities",
+        "ETFs",
+        "futures options"
+      ],
+      "path": "skills/options-strategy-analysis/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/options-strategy-analysis/SKILL.md",
+      "version": 1
+    },
+    "options-volatility": {
+      "name": "options-volatility",
+      "description": "Interpret option-implied volatility, skew, term structure, and Greeks from a specified contract surface.",
+      "domain": "derivatives research",
+      "asset_classes": [
+        "options",
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/options-volatility/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/options-volatility/SKILL.md",
+      "version": 1
+    },
+    "pair-trading-cointegration": {
+      "name": "pair-trading-cointegration",
+      "description": "Evaluate candidate pairs for economic rationale, stationarity, cointegration, regime stability, and executable spread economics.",
+      "domain": "relative-value research",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures",
+        "crypto"
+      ],
+      "path": "skills/pair-trading-cointegration/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/pair-trading-cointegration/SKILL.md",
+      "version": 1
+    },
+    "pead-event-study": {
+      "name": "pead-event-study",
+      "description": "Research post-earnings announcement drift using point-in-time surprises, estimate revisions, event timestamps and subsequent return windows.",
+      "domain": "earnings and event studies",
+      "asset_classes": [
+        "equities"
+      ],
+      "path": "skills/pead-event-study/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/pead-event-study/SKILL.md",
+      "version": 1
+    },
+    "platform-backtest-parity-review": {
+      "name": "platform-backtest-parity-review",
+      "description": "Compare research-backtest assumptions with live or paper-trading platform semantics before trusting simulated results.",
+      "domain": "simulation and platform validation",
+      "asset_classes": [
+        "equities",
+        "futures",
+        "FX",
+        "crypto"
+      ],
+      "path": "skills/platform-backtest-parity-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/platform-backtest-parity-review/SKILL.md",
+      "version": 1
+    },
+    "portfolio-construction-review": {
+      "name": "portfolio-construction-review",
+      "description": "Review portfolio construction, diversification, factor overlap, liquidity, currency exposure, and scenario concentration using trader-supplied holdings.",
+      "domain": "portfolio management",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/portfolio-construction-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/portfolio-construction-review/SKILL.md",
+      "version": 1
+    },
+    "portfolio-exposure": {
+      "name": "portfolio-exposure",
+      "description": "Review concentration, factor, sector, currency, liquidity, and correlated exposure using explicit portfolio inputs.",
+      "domain": "portfolio risk",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/portfolio-exposure/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/portfolio-exposure/SKILL.md",
+      "version": 1
+    },
+    "portfolio-holdings-reconciliation": {
+      "name": "portfolio-holdings-reconciliation",
+      "description": "Reconcile supplied holdings, cash, quantities, prices, currencies and corporate actions before portfolio risk analysis.",
+      "domain": "portfolio data quality",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "options",
+        "futures",
+        "crypto"
+      ],
+      "path": "skills/portfolio-holdings-reconciliation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/portfolio-holdings-reconciliation/SKILL.md",
+      "version": 1
+    },
+    "quantitative-research": {
+      "name": "quantitative-research",
+      "description": "Turn a trading idea into a falsifiable research protocol with explicit data, hypothesis, and evaluation metrics.",
+      "domain": "quant research",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/quantitative-research/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/quantitative-research/SKILL.md",
+      "version": 1
+    },
+    "research-synthesis": {
+      "name": "research-synthesis",
+      "description": "Synthesize specialist research while preserving provenance, disagreement, uncertainty, and missing inputs.",
+      "domain": "research operations",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/research-synthesis/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/research-synthesis/SKILL.md",
+      "version": 1
+    },
+    "risk-management": {
+      "name": "risk-management",
+      "description": "Translate a proposed trade plan into explicit loss scenarios, risk budget, and operational checks.",
+      "domain": "trade risk",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/risk-management/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/risk-management/SKILL.md",
+      "version": 1
+    },
+    "sector-relative-strength": {
+      "name": "sector-relative-strength",
+      "description": "Compare sector and instrument performance against a defined benchmark and consistent universe.",
+      "domain": "cross-sectional research",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/sector-relative-strength/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/sector-relative-strength/SKILL.md",
+      "version": 1
+    },
+    "sector-theme-rotation": {
+      "name": "sector-theme-rotation",
+      "description": "Identify changes in cross-sector and thematic leadership while controlling for universe, lookback, benchmark, and concentration effects.",
+      "domain": "cross-sectional research",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/sector-theme-rotation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/sector-theme-rotation/SKILL.md",
+      "version": 1
+    },
+    "sentiment-positioning": {
+      "name": "sentiment-positioning",
+      "description": "Describe positioning, sentiment, crowding, and flow evidence while separating proxies from direct measurements.",
+      "domain": "market sentiment",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/sentiment-positioning/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/sentiment-positioning/SKILL.md",
+      "version": 1
+    },
+    "settlement-fails-analysis": {
+      "name": "settlement-fails-analysis",
+      "description": "Review settlement failures and delivery constraints as a market-structure risk with careful reporting-lag interpretation.",
+      "domain": "settlement and market plumbing",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/settlement-fails-analysis/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/settlement-fails-analysis/SKILL.md",
+      "version": 1
+    },
+    "short-borrow-availability": {
+      "name": "short-borrow-availability",
+      "description": "Assess short-side borrow availability, fees, recall, locate and squeeze risk before a short thesis is considered feasible.",
+      "domain": "short sale financing risk",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/short-borrow-availability/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/short-borrow-availability/SKILL.md",
+      "version": 1
+    },
+    "short-side-risk-framework": {
+      "name": "short-side-risk-framework",
+      "description": "Review borrow, squeeze, gap, financing, recall, margin, and asymmetrical loss risks in a proposed short thesis.",
+      "domain": "short-selling risk",
+      "asset_classes": [
+        "equities",
+        "ETFs",
+        "futures",
+        "crypto"
+      ],
+      "path": "skills/short-side-risk-framework/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/short-side-risk-framework/SKILL.md",
+      "version": 1
+    },
+    "signal-consensus-audit": {
+      "name": "signal-consensus-audit",
+      "description": "Audit a combined research score or model ensemble for dependence, missingness, unstable weights and false consensus.",
+      "domain": "signal aggregation governance",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/signal-consensus-audit/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/signal-consensus-audit/SKILL.md",
+      "version": 1
+    },
+    "signal-postmortem-review": {
+      "name": "signal-postmortem-review",
+      "description": "Review closed signals and trades by outcome, market context, execution quality, and rule adherence without equating profit with process quality.",
+      "domain": "performance review",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/signal-postmortem-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/signal-postmortem-review/SKILL.md",
+      "version": 1
+    },
+    "strategy-drift-pivot-review": {
+      "name": "strategy-drift-pivot-review",
+      "description": "Detect strategy degradation and evaluate whether to retain, pause, investigate or redesign without data-mined rule changes.",
+      "domain": "strategy lifecycle management",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/strategy-drift-pivot-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/strategy-drift-pivot-review/SKILL.md",
+      "version": 1
+    },
+    "strategy-idea-mining": {
+      "name": "strategy-idea-mining",
+      "description": "Convert a market observation into a falsifiable trading hypothesis with measurable features, controls, and a test plan.",
+      "domain": "systematic research",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/strategy-idea-mining/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/strategy-idea-mining/SKILL.md",
+      "version": 1
+    },
+    "strategy-robustness-review": {
+      "name": "strategy-robustness-review",
+      "description": "Challenge strategy results for data leakage, selection bias, unstable parameters, execution realism, and regime dependence.",
+      "domain": "systematic validation",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/strategy-robustness-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/strategy-robustness-review/SKILL.md",
+      "version": 1
+    },
+    "technical-structure": {
+      "name": "technical-structure",
+      "description": "Describe price structure, trend, momentum, support/resistance hypotheses, and volatility using clearly stated timeframes.",
+      "domain": "technical research",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/technical-structure/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/technical-structure/SKILL.md",
+      "version": 1
+    },
+    "trade-hypothesis-formation": {
+      "name": "trade-hypothesis-formation",
+      "description": "Turn a trading intuition into a falsifiable research hypothesis with measurable variables and predeclared failure conditions.",
+      "domain": "strategy hypothesis design",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/trade-hypothesis-formation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/trade-hypothesis-formation/SKILL.md",
+      "version": 1
+    },
+    "trade-journal-review": {
+      "name": "trade-journal-review",
+      "description": "Review completed trades for process adherence and repeatable behavioural or execution patterns.",
+      "domain": "trader process",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/trade-journal-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/trade-journal-review/SKILL.md",
+      "version": 1
+    },
+    "trade-plan-discipline": {
+      "name": "trade-plan-discipline",
+      "description": "Check whether a proposed plan is complete, internally consistent, and compatible with explicit trader-defined limits.",
+      "domain": "pre-trade controls",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/trade-plan-discipline/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/trade-plan-discipline/SKILL.md",
+      "version": 1
+    },
+    "trader-memory-journal": {
+      "name": "trader-memory-journal",
+      "description": "Maintain a structured, timestamped record of hypotheses, decisions, planned risk, deviations, and thesis lifecycle changes.",
+      "domain": "trader process",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/trader-memory-journal/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/trader-memory-journal/SKILL.md",
+      "version": 1
+    },
+    "trading-workflow-navigator": {
+      "name": "trading-workflow-navigator",
+      "description": "Route a trader's stated objective to the correct research skills, specialist agents, evidence requirements, and decision gates.",
+      "domain": "research operations",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/trading-workflow-navigator/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/trading-workflow-navigator/SKILL.md",
+      "version": 1
+    },
+    "uptrend-participation": {
+      "name": "uptrend-participation",
+      "description": "Measure how broadly instruments satisfy a declared trend template and whether participation is expanding or contracting.",
+      "domain": "trend participation",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/uptrend-participation/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/uptrend-participation/SKILL.md",
+      "version": 1
+    },
+    "valuation-discipline": {
+      "name": "valuation-discipline",
+      "description": "Frame valuation using explicit assumptions, comparable sets, and scenario ranges rather than false precision.",
+      "domain": "equity valuation",
+      "asset_classes": [
+        "equities"
+      ],
+      "path": "skills/valuation-discipline/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/valuation-discipline/SKILL.md",
+      "version": 1
+    },
+    "vcp-breakout-research": {
+      "name": "vcp-breakout-research",
+      "description": "Assess volatility contraction structures, supply reduction hypotheses, pivot quality, and breakout confirmation with reproducible criteria.",
+      "domain": "technical screening",
+      "asset_classes": [
+        "equities",
+        "ETFs"
+      ],
+      "path": "skills/vcp-breakout-research/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/vcp-breakout-research/SKILL.md",
+      "version": 1
+    },
+    "weekly-performance-review": {
+      "name": "weekly-performance-review",
+      "description": "Review realised trades and process adherence using a fixed reporting period and explicit treatment of open positions and costs.",
+      "domain": "trader performance review",
+      "asset_classes": [
+        "multi-asset"
+      ],
+      "path": "skills/weekly-performance-review/SKILL.md",
+      "package_path": "src/marketcouncil/skill_library/weekly-performance-review/SKILL.md",
+      "version": 1
+    }
+  }
+}

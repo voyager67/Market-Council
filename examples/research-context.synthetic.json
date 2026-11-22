@@ -1,0 +1,41 @@
+{
+  "_notice": "SYNTHETIC EXAMPLE ONLY. These values are fictional and must not be treated as market facts.",
+  "fundamentals": {
+    "issuer": "EXAMPLE CO",
+    "period_end": "2025-12-31",
+    "currency": "USD",
+    "revenue_growth_yoy_pct": 12.4,
+    "free_cash_flow": 125000000,
+    "source": "https://example.invalid/synthetic-filing",
+    "retrieved_at": "2026-01-15T12:00:00Z"
+  },
+  "events": {
+    "earnings_date": null,
+    "known_catalysts": []
+  },
+  "macro": {
+    "policy_rate_pct": 4.0,
+    "series_source": "Synthetic fixture; no external source"
+  },
+  "positioning": {
+    "report_type": "fictional-example",
+    "as_of": "2026-01-13",
+    "published_at": "2026-01-16T00:00:00Z"
+  },
+  "derivatives": {
+    "implied_volatility": null,
+    "notice": "No option chain supplied"
+  },
+  "portfolio": {
+    "account_equity": null,
+    "exposure": null
+  },
+  "sources": [
+    {
+      "publisher": "Synthetic fixture",
+      "uri": "https://example.invalid/fixture",
+      "published_at": "2026-01-15T12:00:00Z",
+      "retrieved_at": "2026-01-15T12:05:00Z"
+    }
+  ]
+}

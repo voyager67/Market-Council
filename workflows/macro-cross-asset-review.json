@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "macro-cross-asset-review",
+  "title": "Macro and Cross-Asset Review",
+  "audience": "Macro, FX, rates and commodity traders",
+  "objective": "Map scheduled macro events and cross-asset drivers to a dated research brief.",
+  "asset_classes": [
+    "FX",
+    "rates",
+    "commodities",
+    "equities",
+    "futures"
+  ],
+  "required_inputs": [
+    "Official macro calendar",
+    "FRED/ALFRED or equivalent series metadata",
+    "Central-bank releases",
+    "Currency and contract conventions",
+    "Relevant exposure list"
+  ],
+  "steps": [
+    {
+      "id": "calendar",
+      "agent_role": "macro_strategist",
+      "skills": [
+        "macro-event-risk",
+        "economic-calendar-brief",
+        "fx-macro-positioning"
+      ],
+      "output": "Official event and macro source ledger"
+    },
+    {
+      "id": "positioning",
+      "agent_role": "institutional_flow_analyst",
+      "skills": [
+        "cot-positioning",
+        "sentiment-positioning"
+      ],
+      "output": "Futures positioning context"
+    },
+    {
+      "id": "dependence",
+      "agent_role": "quant_researcher",
+      "skills": [
+        "cross-asset-correlation",
+        "quantitative-research"
+      ],
+      "output": "Cross-asset dependence and estimation caveats"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Scenario brief and unresolved assumptions"
+    }
+  ],
+  "decision_gates": [
+    "Preserve release date, publication date, observation date, vintage, and timezone.",
+    "Do not treat weekly positioning snapshots as intraday data.",
+    "No scenario probability is supplied unless independently estimated."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

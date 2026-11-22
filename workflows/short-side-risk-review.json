@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "short-side-risk-review",
+  "title": "Short-Side and Downside Risk Review",
+  "audience": "Short sellers and hedging professionals",
+  "objective": "Review short thesis quality and asymmetric borrow, squeeze, gap, and margin risks.",
+  "asset_classes": [
+    "equities",
+    "ETFs",
+    "futures",
+    "crypto"
+  ],
+  "required_inputs": [
+    "Instrument/venue capability",
+    "Borrow and locate evidence",
+    "Financing and margin terms",
+    "Timestamped liquidity data",
+    "Entry/stop assumptions",
+    "Risk policy"
+  ],
+  "steps": [
+    {
+      "id": "bear",
+      "agent_role": "bear_researcher",
+      "skills": [
+        "bear-case-development"
+      ],
+      "output": "Conditional downside thesis"
+    },
+    {
+      "id": "borrow",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "short-side-risk-framework"
+      ],
+      "output": "Borrow, recall, and margin risk"
+    },
+    {
+      "id": "liquidity",
+      "agent_role": "microstructure_analyst",
+      "skills": [
+        "liquidity-execution"
+      ],
+      "output": "Liquidity and gap-risk conditions"
+    },
+    {
+      "id": "gate",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "drawdown-circuit-breaker",
+        "trade-plan-discipline"
+      ],
+      "output": "Human no-go / review gate"
+    }
+  ],
+  "decision_gates": [
+    "No locate or borrow availability may be inferred from symbol alone.",
+    "Short losses can exceed initial estimates; gaps and recalls remain possible.",
+    "The package does not place short orders or route borrow requests."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

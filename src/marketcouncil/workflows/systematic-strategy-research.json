@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "id": "systematic-strategy-research",
+  "title": "Systematic Strategy Research and Validation",
+  "audience": "Quant researchers and systematic traders",
+  "objective": "Translate an anomaly into a falsifiable study and challenge it before accepting performance claims.",
+  "asset_classes": [
+    "multi-asset"
+  ],
+  "required_inputs": [
+    "Research idea and rationale",
+    "Point-in-time historical data",
+    "Universe history",
+    "Feature availability times",
+    "Execution model and costs",
+    "Train/validation/test split"
+  ],
+  "steps": [
+    {
+      "id": "hypothesis",
+      "agent_role": "quant_researcher",
+      "skills": [
+        "strategy-idea-mining",
+        "quantitative-research"
+      ],
+      "output": "Pre-registered research ticket"
+    },
+    {
+      "id": "data",
+      "agent_role": "microstructure_analyst",
+      "skills": [
+        "data-quality-audit"
+      ],
+      "output": "Dataset lineage and quality report"
+    },
+    {
+      "id": "backtest",
+      "agent_role": "quant_researcher",
+      "skills": [
+        "backtest-integrity",
+        "strategy-robustness-review"
+      ],
+      "output": "Bias and robustness audit"
+    },
+    {
+      "id": "challenge",
+      "agent_role": "bear_researcher",
+      "skills": [
+        "bear-case-development"
+      ],
+      "output": "Failure modes and alternative explanations"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Research decision: proceed, revise, or stop"
+    }
+  ],
+  "decision_gates": [
+    "Do not tune on the final holdout.",
+    "Include failed candidates and all strategy trials in the research log.",
+    "A positive backtest is not proof of future profitability."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marketcouncil"
+version = "1.0.0"
+description = "A multi-agent, multi-model trading research and risk-workflow platform for professional traders and market researchers."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "MarketCouncil contributors" }]
+keywords = ["trading", "multi-agent", "multi-model", "market-research", "risk-management", "quantitative-research", "trader-workflows", "equities", "options", "futures", "crypto"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Topic :: Office/Business :: Financial :: Investment",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = []
+
+[project.optional-dependencies]
+ai = ["litellm>=1.55"]
+api = ["fastapi>=0.110", "uvicorn>=0.27"]
+stream = ["websockets>=14,<17"]
+dev = ["pytest>=8.0", "ruff>=0.8", "build>=1.2", "httpx>=0.27", "bandit[toml]>=1.7", "pip-audit>=2.7"]
+
+
+[project.scripts]
+market-council = "marketcouncil.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+marketcouncil = ["skill_library/*/*.md", "skill_index.json", "workflows/*.json", "skillsets/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

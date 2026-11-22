@@ -1,0 +1,32 @@
+services:
+  marketcouncil-api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: marketcouncil:1.0.0
+    restart: unless-stopped
+    env_file:
+      - production.env
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - marketcouncil-data:/data
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 128
+    mem_limit: 512m
+    cpus: 1.5
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3).read()"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  marketcouncil-data:

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="660" viewBox="0 0 1440 660" role="img" aria-labelledby="title desc">
+<title id="title">MarketCouncil multi-agent trading research workflow</title>
+<desc id="desc">Trader-supplied OHLCV and contextual evidence pass deterministic validation, then fourteen concurrent analyst roles review the inputs. A synthesis director follows, deterministic risk utilities remain separate, and a human reviews the brief. Execution authorization is none.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071321"/><stop offset="1" stop-color="#10233A"/></linearGradient>
+  <style>
+    .panel{fill:#14283F;stroke:#385773;stroke-width:2}.panel2{fill:#192F49;stroke:#426789;stroke-width:1.5}
+    .h{font:700 20px Arial,sans-serif;fill:#ECF3FF}.s{font:14px Arial,sans-serif;fill:#9FB4CF}
+    .label{font:700 14px Arial,sans-serif;fill:#35D6B5}.line{stroke:#35D6B5;stroke-width:3;fill:none}
+    .muted{stroke:#3A5674;stroke-width:1.5;fill:none}
+  </style>
+</defs>
+<rect width="1440" height="660" rx="22" fill="url(#bg)"/>
+<text x="60" y="58" class="label">MARKETCOUNCIL  /  RESEARCH PIPELINE</text>
+<text x="60" y="96" class="h" style="font-size:29px">Evidence first. Specialist analysis. Human authority.</text>
+<!-- input -->
+<rect class="panel" x="60" y="190" width="210" height="165" rx="16"/>
+<text x="84" y="230" class="label">01 · INPUT</text><text x="84" y="269" class="h">Trader data</text>
+<text x="84" y="300" class="s">OHLCV CSV</text><text x="84" y="324" class="s">Optional research JSON</text>
+<path class="line" d="M270 272H315l-10 -9m10 9l-10 9"/>
+<!-- validation -->
+<rect class="panel" x="320" y="190" width="210" height="165" rx="16"/>
+<text x="344" y="230" class="label">02 · VALIDATE</text><text x="344" y="269" class="h">Data contracts</text>
+<text x="344" y="300" class="s">Schema · timestamps</text><text x="344" y="324" class="s">Metrics · provenance gaps</text>
+<path class="line" d="M530 272H575l-10 -9m10 9l-10 9"/>
+<!-- parallel roles -->
+<rect class="panel" x="580" y="150" width="400" height="300" rx="18"/>
+<text x="610" y="190" class="label">03 · PARALLEL RESEARCH</text><text x="610" y="224" class="h">14 specialist analysts</text>
+<rect class="panel2" x="610" y="248" width="160" height="58" rx="10"/><text x="628" y="271" class="h" style="font-size:15px">12 domain roles</text><text x="628" y="291" class="s">Price · Macro · Risk</text>
+<rect class="panel2" x="790" y="248" width="160" height="58" rx="10"/><text x="808" y="271" class="h" style="font-size:15px">Bull case</text><text x="808" y="291" class="s">Conditional upside</text>
+<rect class="panel2" x="610" y="324" width="340" height="58" rx="10"/><text x="628" y="348" class="h" style="font-size:15px">Bear case · adversarial challenge</text><text x="628" y="369" class="s">Falsification · downside · fragile assumptions</text>
+<text x="610" y="421" class="s">Each role receives mapped skill playbooks</text>
+<path class="line" d="M980 300H1025l-10 -9m10 9l-10 9"/>
+<!-- synthesis -->
+<rect class="panel" x="1030" y="190" width="170" height="165" rx="16"/>
+<text x="1052" y="230" class="label">04 · SYNTHESIS</text><text x="1052" y="269" class="h">Director</text>
+<text x="1052" y="300" class="s">Resolve conflicts</text><text x="1052" y="324" class="s">Preserve abstentions</text>
+<path class="line" d="M1200 272H1230l-10 -9m10 9l-10 9"/>
+<!-- human -->
+<rect class="panel" x="1235" y="190" width="155" height="165" rx="16"/>
+<text x="1255" y="230" class="label">05 · HUMAN</text><text x="1255" y="269" class="h">Review</text>
+<text x="1255" y="300" class="s">Risk policy</text><text x="1255" y="324" class="s">Decision owner</text>
+<!-- safety strip -->
+<rect x="60" y="500" width="1330" height="95" rx="14" fill="#1B2B3B" stroke="#EFB74C" stroke-width="1.5"/>
+<text x="90" y="540" fill="#EFB74C" font-family="Arial" font-size="19" font-weight="bold">DETERMINISTIC RISK UTILITIES</text>
+<text x="90" y="568" class="s">Position-size estimates are separate from model-authored conclusions and remain subject to instrument assumptions.</text>
+<text x="900" y="548" fill="#ECF3FF" font-family="Arial" font-size="17" font-weight="bold">EXECUTION AUTHORIZATION: NONE</text>
+<text x="900" y="572" class="s">Human review is mandatory.</text>
+</svg>

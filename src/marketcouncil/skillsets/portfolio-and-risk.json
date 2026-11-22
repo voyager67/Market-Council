@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "id": "portfolio-and-risk",
+  "title": "Portfolio and Risk Management",
+  "required_skills": [
+    "portfolio-exposure",
+    "portfolio-construction-review",
+    "cross-asset-correlation",
+    "risk-management",
+    "drawdown-circuit-breaker",
+    "short-side-risk-framework"
+  ],
+  "related_workflows": [
+    "portfolio-risk-review",
+    "short-side-risk-review"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "cross-asset-correlation",
+    "dividend-tax-jurisdiction-check",
+    "drawdown-circuit-breaker",
+    "portfolio-construction-review",
+    "portfolio-exposure",
+    "portfolio-holdings-reconciliation",
+    "risk-management",
+    "settlement-fails-analysis",
+    "short-borrow-availability",
+    "short-side-risk-framework",
+    "signal-consensus-audit",
+    "strategy-drift-pivot-review",
+    "weekly-performance-review"
+  ]
+}

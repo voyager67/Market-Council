@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "dividend-quality-review",
+  "title": "Dividend and Income Equity Review",
+  "audience": "Income and long-term equity investors",
+  "objective": "Assess distribution sustainability, cash coverage, balance-sheet resilience, and valuation assumptions.",
+  "asset_classes": [
+    "equities",
+    "ETFs"
+  ],
+  "required_inputs": [
+    "Issuer filings and cash flows",
+    "Dividend declarations",
+    "Debt maturities",
+    "Share count and dilution",
+    "Sector context",
+    "Current valuation inputs"
+  ],
+  "steps": [
+    {
+      "id": "quality",
+      "agent_role": "fundamental_analyst",
+      "skills": [
+        "fundamental-quality",
+        "dividend-sustainability"
+      ],
+      "output": "Cash coverage and operating quality"
+    },
+    {
+      "id": "valuation",
+      "agent_role": "fundamental_analyst",
+      "skills": [
+        "valuation-discipline",
+        "growth-stock-screening"
+      ],
+      "output": "Valuation and peer context"
+    },
+    {
+      "id": "risk",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "portfolio-construction-review",
+        "portfolio-exposure"
+      ],
+      "output": "Portfolio concentration and income source risk"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Dividend sustainability memo"
+    }
+  ],
+  "decision_gates": [
+    "Verify dividend dates and amounts with issuer/exchange sources.",
+    "Do not equate yield with safety or future total return.",
+    "Do not provide tax advice; jurisdiction-specific tax rules require separate review."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

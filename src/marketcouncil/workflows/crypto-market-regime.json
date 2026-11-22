@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "crypto-market-regime",
+  "title": "Crypto Market Regime and Venue Review",
+  "audience": "Spot, perpetual and digital-asset traders",
+  "objective": "Assess venue-specific conditions, liquidity, basis, funding and market structure.",
+  "asset_classes": [
+    "crypto spot",
+    "crypto perpetuals",
+    "crypto futures"
+  ],
+  "required_inputs": [
+    "Venue and instrument IDs",
+    "Timestamped OHLCV",
+    "Funding and open interest",
+    "Mark/index prices",
+    "Order-book snapshots",
+    "Contract and fee schedule"
+  ],
+  "steps": [
+    {
+      "id": "regime",
+      "agent_role": "crypto_analyst",
+      "skills": [
+        "crypto-microstructure",
+        "crypto-regime-assessment"
+      ],
+      "output": "Venue-aware crypto regime assessment"
+    },
+    {
+      "id": "book",
+      "agent_role": "microstructure_analyst",
+      "skills": [
+        "market-maker-microstructure",
+        "liquidity-execution",
+        "data-quality-audit"
+      ],
+      "output": "Order-book and feed quality"
+    },
+    {
+      "id": "macro",
+      "agent_role": "macro_strategist",
+      "skills": [
+        "cross-asset-correlation"
+      ],
+      "output": "Cross-asset context"
+    },
+    {
+      "id": "risk",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "risk-management",
+        "drawdown-circuit-breaker"
+      ],
+      "output": "Leverage and drawdown risk review"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Human-reviewed venue and market brief"
+    }
+  ],
+  "decision_gates": [
+    "Do not aggregate venue metrics without compatible definitions and timestamps.",
+    "Verify funding intervals, contract multipliers and liquidation methodology.",
+    "A successful API response does not establish venue solvency or uninterrupted availability."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

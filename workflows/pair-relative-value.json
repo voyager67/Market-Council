@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "pair-relative-value",
+  "title": "Pair and Relative-Value Research",
+  "audience": "Statistical arbitrage and relative-value traders",
+  "objective": "Study candidate pairs and spreads using economic rationale, statistical diagnostics, and executable cost assumptions.",
+  "asset_classes": [
+    "equities",
+    "ETFs",
+    "futures",
+    "crypto"
+  ],
+  "required_inputs": [
+    "Synchronized adjusted prices",
+    "Instrument mapping",
+    "Formation and test periods",
+    "Borrow/funding costs",
+    "Spread and liquidity data"
+  ],
+  "steps": [
+    {
+      "id": "quality",
+      "agent_role": "microstructure_analyst",
+      "skills": [
+        "data-quality-audit",
+        "liquidity-execution"
+      ],
+      "output": "Synchronized dataset and liquidity review"
+    },
+    {
+      "id": "model",
+      "agent_role": "quant_researcher",
+      "skills": [
+        "pair-trading-cointegration",
+        "quantitative-research"
+      ],
+      "output": "Pair diagnostics and out-of-sample design"
+    },
+    {
+      "id": "risk",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "portfolio-exposure",
+        "risk-management"
+      ],
+      "output": "Residual and gross exposure review"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Research dossier and evidence gaps"
+    }
+  ],
+  "decision_gates": [
+    "Correlation is not cointegration.",
+    "Separate model formation from validation and untouched testing.",
+    "Check borrow, funding, legging, and asynchronous market risk."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

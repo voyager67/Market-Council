@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "id": "earnings-event-review",
+  "title": "Earnings Event Research",
+  "audience": "Equity and options traders",
+  "objective": "Prepare a source-verified earnings brief and examine post-release reactions without implying predictable drift.",
+  "asset_classes": [
+    "equities",
+    "options"
+  ],
+  "required_inputs": [
+    "Issuer release or filing",
+    "Event calendar and timezone",
+    "Consensus data with vintage",
+    "Adjusted price data",
+    "Option chain if options exposure is reviewed"
+  ],
+  "steps": [
+    {
+      "id": "calendar",
+      "agent_role": "catalyst_researcher",
+      "skills": [
+        "catalyst-verification",
+        "earnings-calendar-planning"
+      ],
+      "output": "Verified event timestamp and source ledger"
+    },
+    {
+      "id": "quality",
+      "agent_role": "earnings_analyst",
+      "skills": [
+        "fundamental-quality",
+        "earnings-reaction-study"
+      ],
+      "output": "Earnings quality and reaction study design"
+    },
+    {
+      "id": "derivatives",
+      "agent_role": "derivatives_analyst",
+      "skills": [
+        "options-volatility",
+        "options-strategy-analysis"
+      ],
+      "output": "Option event-risk and volatility assessment"
+    },
+    {
+      "id": "challenge",
+      "agent_role": "bear_researcher",
+      "skills": [
+        "bear-case-development"
+      ],
+      "output": "Adverse surprise and gap-risk case"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis",
+        "trade-plan-discipline"
+      ],
+      "output": "Event brief with explicit human decision gates"
+    }
+  ],
+  "decision_gates": [
+    "Verify event date and release time from issuer or exchange sources.",
+    "Do not mix actual results with stale or incomparable consensus estimates.",
+    "Review overnight gap, implied volatility, and liquidity risk before any human decision."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

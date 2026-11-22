@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "id": "futures-contract-risk",
+  "title": "Futures Contract and Roll Risk",
+  "audience": "Futures and commodity traders",
+  "objective": "Verify contract economics, roll schedules, term structure, and sizing assumptions.",
+  "asset_classes": [
+    "futures",
+    "commodities",
+    "rates",
+    "equity indices"
+  ],
+  "required_inputs": [
+    "Exchange contract specifications",
+    "Contract-month prices",
+    "Expiry/notice calendar",
+    "Account equity and risk limits",
+    "FX conversion inputs when applicable"
+  ],
+  "steps": [
+    {
+      "id": "contract",
+      "agent_role": "derivatives_analyst",
+      "skills": [
+        "futures-contract-sizing",
+        "futures-roll-and-term-structure"
+      ],
+      "output": "Contract economics and curve report"
+    },
+    {
+      "id": "positioning",
+      "agent_role": "institutional_flow_analyst",
+      "skills": [
+        "cot-positioning"
+      ],
+      "output": "Positioning report with report-date caveat"
+    },
+    {
+      "id": "macro",
+      "agent_role": "macro_strategist",
+      "skills": [
+        "macro-event-risk",
+        "economic-calendar-brief"
+      ],
+      "output": "Event exposure and macro scenarios"
+    },
+    {
+      "id": "risk",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "risk-management",
+        "portfolio-exposure"
+      ],
+      "output": "Risk-budget and exposure review"
+    }
+  ],
+  "decision_gates": [
+    "Verify tick value, multiplier, delivery and expiry directly from venue documentation.",
+    "Continuous futures series are research constructs, not tradable contracts.",
+    "Human review must confirm broker margin and account-specific rules."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "id": "portfolio-risk-review",
+  "title": "Portfolio Exposure and Drawdown Review",
+  "audience": "Portfolio managers and active traders",
+  "objective": "Review supplied holdings, concentration, correlation, liquidity, and drawdown against trader policy.",
+  "asset_classes": [
+    "multi-asset"
+  ],
+  "required_inputs": [
+    "Timestamped holdings and cash",
+    "Instrument identifiers and currency",
+    "Current marks",
+    "Benchmark and exposure tags",
+    "Trader-defined policy limits",
+    "Equity curve"
+  ],
+  "steps": [
+    {
+      "id": "portfolio",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "portfolio-construction-review",
+        "portfolio-exposure"
+      ],
+      "output": "Reconciled exposures and policy exceptions"
+    },
+    {
+      "id": "dependence",
+      "agent_role": "quant_researcher",
+      "skills": [
+        "cross-asset-correlation"
+      ],
+      "output": "Correlation and stress dependence"
+    },
+    {
+      "id": "fundamentals",
+      "agent_role": "fundamental_analyst",
+      "skills": [
+        "fundamental-quality"
+      ],
+      "output": "Issuer concentration quality context when provided"
+    },
+    {
+      "id": "circuit",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "drawdown-circuit-breaker",
+        "risk-management"
+      ],
+      "output": "Policy gate and threshold state"
+    }
+  ],
+  "decision_gates": [
+    "Reconcile cash, stale marks, and duplicate holdings before interpreting ratios.",
+    "Do not infer investment suitability or risk tolerance.",
+    "No automated rebalancing or account actions are performed."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

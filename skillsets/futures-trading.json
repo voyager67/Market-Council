@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "futures-trading",
+  "title": "Futures and Derivatives Trading",
+  "required_skills": [
+    "futures-contract-sizing",
+    "futures-roll-and-term-structure",
+    "cot-positioning",
+    "market-maker-microstructure",
+    "risk-management"
+  ],
+  "related_workflows": [
+    "futures-contract-risk",
+    "macro-cross-asset-review"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "contrarian-setup-validation",
+    "cot-positioning",
+    "downtrend-duration-study",
+    "futures-contract-sizing",
+    "futures-roll-and-term-structure",
+    "market-environment-regime-analysis",
+    "market-maker-microstructure",
+    "risk-management",
+    "settlement-fails-analysis",
+    "weekly-performance-review"
+  ]
+}

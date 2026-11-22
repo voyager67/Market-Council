@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "skillsets": [
+    {
+      "id": "equity-active-trading",
+      "title": "Equity Active Trading",
+      "path": "skillsets/equity-active-trading.json"
+    },
+    {
+      "id": "growth-and-momentum",
+      "title": "Growth and Momentum Research",
+      "path": "skillsets/growth-and-momentum.json"
+    },
+    {
+      "id": "dividend-income",
+      "title": "Dividend and Income Investing",
+      "path": "skillsets/dividend-income.json"
+    },
+    {
+      "id": "macro-fx-commodities",
+      "title": "Macro, FX and Commodity Trading",
+      "path": "skillsets/macro-fx-commodities.json"
+    },
+    {
+      "id": "options-volatility",
+      "title": "Options and Volatility Trading",
+      "path": "skillsets/options-volatility.json"
+    },
+    {
+      "id": "futures-trading",
+      "title": "Futures and Derivatives Trading",
+      "path": "skillsets/futures-trading.json"
+    },
+    {
+      "id": "digital-assets",
+      "title": "Digital Asset Trading",
+      "path": "skillsets/digital-assets.json"
+    },
+    {
+      "id": "quant-systematic",
+      "title": "Quant and Systematic Research",
+      "path": "skillsets/quant-systematic.json"
+    },
+    {
+      "id": "portfolio-and-risk",
+      "title": "Portfolio and Risk Management",
+      "path": "skillsets/portfolio-and-risk.json"
+    },
+    {
+      "id": "trader-development",
+      "title": "Trader Process and Improvement",
+      "path": "skillsets/trader-development.json"
+    }
+  ]
+}

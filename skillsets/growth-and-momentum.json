@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "growth-and-momentum",
+  "title": "Growth and Momentum Research",
+  "required_skills": [
+    "growth-stock-screening",
+    "momentum-episodic-pivot",
+    "uptrend-participation",
+    "sector-theme-rotation",
+    "fundamental-quality",
+    "backtest-integrity"
+  ],
+  "related_workflows": [
+    "equity-breakout-research",
+    "systematic-strategy-research"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "backtest-integrity",
+    "breakout-trade-planning",
+    "contrarian-setup-validation",
+    "cross-sector-theme-detection",
+    "downtrend-duration-study",
+    "event-cohort-study",
+    "fundamental-quality",
+    "growth-stock-screening",
+    "market-top-risk-assessment",
+    "momentum-episodic-pivot",
+    "multi-factor-universe-screening",
+    "pead-event-study",
+    "sector-theme-rotation",
+    "uptrend-participation"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "trader-development",
+  "title": "Trader Process and Improvement",
+  "required_skills": [
+    "trader-memory-journal",
+    "trade-journal-review",
+    "signal-postmortem-review",
+    "trade-plan-discipline",
+    "trading-workflow-navigator"
+  ],
+  "related_workflows": [
+    "trade-memory-postmortem"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "edge-candidate-pipeline",
+    "news-reaction-analysis",
+    "platform-backtest-parity-review",
+    "portfolio-holdings-reconciliation",
+    "research-synthesis",
+    "signal-consensus-audit",
+    "signal-postmortem-review",
+    "strategy-drift-pivot-review",
+    "trade-hypothesis-formation",
+    "trade-journal-review",
+    "trade-plan-discipline",
+    "trader-memory-journal",
+    "trading-workflow-navigator",
+    "weekly-performance-review"
+  ]
+}

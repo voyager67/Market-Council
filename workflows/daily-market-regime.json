@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "id": "daily-market-regime",
+  "title": "Daily Market Regime Review",
+  "audience": "Active equity and ETF traders",
+  "objective": "Assess market context and risk appetite before starting fresh discretionary risk.",
+  "asset_classes": [
+    "equities",
+    "ETFs"
+  ],
+  "required_inputs": [
+    "Timestamped benchmark OHLCV",
+    "Breadth and participation dataset",
+    "Universe and session definition",
+    "Trader-defined risk limits"
+  ],
+  "steps": [
+    {
+      "id": "market_state",
+      "agent_role": "technical_analyst",
+      "skills": [
+        "market-regime",
+        "technical-structure"
+      ],
+      "output": "Market structure and trend context"
+    },
+    {
+      "id": "participation",
+      "agent_role": "sentiment_analyst",
+      "skills": [
+        "breadth-regime-confirmation",
+        "uptrend-participation",
+        "distribution-day-risk"
+      ],
+      "output": "Breadth, participation and distribution assessment"
+    },
+    {
+      "id": "cross_asset",
+      "agent_role": "macro_strategist",
+      "skills": [
+        "macro-event-risk",
+        "cross-asset-correlation"
+      ],
+      "output": "Relevant macro and cross-asset context"
+    },
+    {
+      "id": "risk_gate",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "portfolio-exposure",
+        "drawdown-circuit-breaker"
+      ],
+      "output": "Risk posture and human review gate"
+    }
+  ],
+  "decision_gates": [
+    "Confirm instrument and benchmark data share the same session.",
+    "Review any missing or stale breadth observations.",
+    "A human risk owner decides whether the existing risk policy permits new exposure."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

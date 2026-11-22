@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "options-volatility-review",
+  "title": "Options and Volatility Review",
+  "audience": "Options traders and volatility researchers",
+  "objective": "Compare option exposures and structures using verified chain data, Greeks, and event context.",
+  "asset_classes": [
+    "options",
+    "equities",
+    "ETFs",
+    "futures options"
+  ],
+  "required_inputs": [
+    "Timestamped option chain",
+    "Contract specifications",
+    "Underlying bars",
+    "Rates/dividend assumptions",
+    "Event calendar",
+    "Trader-defined risk limits"
+  ],
+  "steps": [
+    {
+      "id": "surface",
+      "agent_role": "derivatives_analyst",
+      "skills": [
+        "options-volatility",
+        "options-strategy-analysis"
+      ],
+      "output": "Volatility surface, Greeks and strategy comparison"
+    },
+    {
+      "id": "underlying",
+      "agent_role": "technical_analyst",
+      "skills": [
+        "technical-structure",
+        "market-regime"
+      ],
+      "output": "Underlying structure and timeframe context"
+    },
+    {
+      "id": "liquidity",
+      "agent_role": "microstructure_analyst",
+      "skills": [
+        "liquidity-execution",
+        "market-maker-microstructure"
+      ],
+      "output": "Quote quality, spread and liquidity"
+    },
+    {
+      "id": "risk",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "risk-management",
+        "trade-plan-discipline"
+      ],
+      "output": "Worst-case and assignment-risk checks"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Scenario report for human review"
+    }
+  ],
+  "decision_gates": [
+    "Check chain timestamp, contract multiplier, settlement and exercise style.",
+    "Do not present model values or Greeks as exact executable outcomes.",
+    "Review assignment, pin, gap, and early-exercise conditions."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

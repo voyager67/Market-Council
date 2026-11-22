@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "id": "equity-breakout-research",
+  "title": "Equity Breakout Research",
+  "audience": "Growth and swing traders",
+  "objective": "Research a potential breakout candidate with technical, quality, liquidity, and adversarial review.",
+  "asset_classes": [
+    "equities",
+    "ETFs"
+  ],
+  "required_inputs": [
+    "Adjusted OHLCV",
+    "Point-in-time universe and liquidity data",
+    "Issuer filing snapshot",
+    "Sector and benchmark context"
+  ],
+  "steps": [
+    {
+      "id": "screen",
+      "agent_role": "technical_analyst",
+      "skills": [
+        "vcp-breakout-research",
+        "growth-stock-screening",
+        "momentum-episodic-pivot"
+      ],
+      "output": "Candidate pattern and screen result"
+    },
+    {
+      "id": "quality",
+      "agent_role": "fundamental_analyst",
+      "skills": [
+        "fundamental-quality",
+        "valuation-discipline"
+      ],
+      "output": "Issuer quality and valuation assumptions"
+    },
+    {
+      "id": "liquidity",
+      "agent_role": "microstructure_analyst",
+      "skills": [
+        "liquidity-execution",
+        "data-quality-audit"
+      ],
+      "output": "Execution and data-quality review"
+    },
+    {
+      "id": "challenge",
+      "agent_role": "bull_researcher",
+      "skills": [
+        "bull-case-development"
+      ],
+      "output": "Conditional upside thesis"
+    },
+    {
+      "id": "countercase",
+      "agent_role": "bear_researcher",
+      "skills": [
+        "bear-case-development",
+        "short-side-risk-framework"
+      ],
+      "output": "Downside case and falsification"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis",
+        "trade-plan-discipline"
+      ],
+      "output": "Human-reviewed research brief"
+    }
+  ],
+  "decision_gates": [
+    "Verify split/dividend adjustment policy and data vintage.",
+    "Confirm the event calendar and liquidity at the intended venue.",
+    "Do not treat a candidate screen or pattern label as an order instruction."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

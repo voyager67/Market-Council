@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "id": "trade-memory-postmortem",
+  "title": "Trade Memory and Performance Postmortem",
+  "audience": "Discretionary and systematic traders",
+  "objective": "Preserve a decision-time record and compare actual trade process with the original plan.",
+  "asset_classes": [
+    "multi-asset"
+  ],
+  "required_inputs": [
+    "Original pre-trade record",
+    "Entry/exit fills and timestamps",
+    "Fees and slippage",
+    "Market context at decision time",
+    "Rules and risk limits",
+    "Closed trade outcome"
+  ],
+  "steps": [
+    {
+      "id": "memory",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "trader-memory-journal",
+        "trade-journal-review"
+      ],
+      "output": "Versioned thesis and decision record"
+    },
+    {
+      "id": "review",
+      "agent_role": "quant_researcher",
+      "skills": [
+        "signal-postmortem-review",
+        "quantitative-research"
+      ],
+      "output": "Process and outcome attribution"
+    },
+    {
+      "id": "risk",
+      "agent_role": "portfolio_risk_officer",
+      "skills": [
+        "risk-management",
+        "drawdown-circuit-breaker"
+      ],
+      "output": "Risk policy adherence"
+    },
+    {
+      "id": "synthesis",
+      "agent_role": "synthesis_director",
+      "skills": [
+        "research-synthesis"
+      ],
+      "output": "Lessons and falsifiable process adjustment"
+    }
+  ],
+  "decision_gates": [
+    "Preserve the original plan; append corrections as new versions.",
+    "Separate process quality from profit/loss outcome.",
+    "Do not generalize from a small or selected sample."
+  ],
+  "human_review_required": true,
+  "execution_authorization": "NONE"
+}

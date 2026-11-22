@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "digital-assets",
+  "title": "Digital Asset Trading",
+  "required_skills": [
+    "crypto-microstructure",
+    "crypto-regime-assessment",
+    "market-maker-microstructure",
+    "liquidity-execution",
+    "drawdown-circuit-breaker"
+  ],
+  "related_workflows": [
+    "crypto-market-regime"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "contrarian-setup-validation",
+    "cross-sector-theme-detection",
+    "crypto-microstructure",
+    "crypto-regime-assessment",
+    "drawdown-circuit-breaker",
+    "event-cohort-study",
+    "failed-news-reaction-analysis",
+    "liquidity-execution",
+    "market-environment-regime-analysis",
+    "market-maker-microstructure",
+    "weekly-performance-review"
+  ]
+}

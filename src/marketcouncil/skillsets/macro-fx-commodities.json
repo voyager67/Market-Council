@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "macro-fx-commodities",
+  "title": "Macro, FX and Commodity Trading",
+  "required_skills": [
+    "macro-event-risk",
+    "economic-calendar-brief",
+    "fx-macro-positioning",
+    "cot-positioning",
+    "cross-asset-correlation",
+    "futures-roll-and-term-structure"
+  ],
+  "related_workflows": [
+    "macro-cross-asset-review",
+    "futures-contract-risk"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "contrarian-setup-validation",
+    "cot-positioning",
+    "cross-asset-correlation",
+    "cross-sector-theme-detection",
+    "downtrend-duration-study",
+    "economic-calendar-brief",
+    "event-cohort-study",
+    "futures-roll-and-term-structure",
+    "fx-macro-positioning",
+    "macro-event-risk",
+    "market-environment-regime-analysis",
+    "market-top-risk-assessment"
+  ]
+}

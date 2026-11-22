@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "workflows": [
+    {
+      "id": "daily-market-regime",
+      "title": "Daily Market Regime Review",
+      "path": "workflows/daily-market-regime.json"
+    },
+    {
+      "id": "equity-breakout-research",
+      "title": "Equity Breakout Research",
+      "path": "workflows/equity-breakout-research.json"
+    },
+    {
+      "id": "earnings-event-review",
+      "title": "Earnings Event Research",
+      "path": "workflows/earnings-event-review.json"
+    },
+    {
+      "id": "macro-cross-asset-review",
+      "title": "Macro and Cross-Asset Review",
+      "path": "workflows/macro-cross-asset-review.json"
+    },
+    {
+      "id": "options-volatility-review",
+      "title": "Options and Volatility Review",
+      "path": "workflows/options-volatility-review.json"
+    },
+    {
+      "id": "futures-contract-risk",
+      "title": "Futures Contract and Roll Risk",
+      "path": "workflows/futures-contract-risk.json"
+    },
+    {
+      "id": "crypto-market-regime",
+      "title": "Crypto Market Regime and Venue Review",
+      "path": "workflows/crypto-market-regime.json"
+    },
+    {
+      "id": "portfolio-risk-review",
+      "title": "Portfolio Exposure and Drawdown Review",
+      "path": "workflows/portfolio-risk-review.json"
+    },
+    {
+      "id": "systematic-strategy-research",
+      "title": "Systematic Strategy Research and Validation",
+      "path": "workflows/systematic-strategy-research.json"
+    },
+    {
+      "id": "pair-relative-value",
+      "title": "Pair and Relative-Value Research",
+      "path": "workflows/pair-relative-value.json"
+    },
+    {
+      "id": "short-side-risk-review",
+      "title": "Short-Side and Downside Risk Review",
+      "path": "workflows/short-side-risk-review.json"
+    },
+    {
+      "id": "trade-memory-postmortem",
+      "title": "Trade Memory and Performance Postmortem",
+      "path": "workflows/trade-memory-postmortem.json"
+    },
+    {
+      "id": "dividend-quality-review",
+      "title": "Dividend and Income Equity Review",
+      "path": "workflows/dividend-quality-review.json"
+    }
+  ]
+}

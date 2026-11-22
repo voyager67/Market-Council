@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "quant-systematic",
+  "title": "Quant and Systematic Research",
+  "required_skills": [
+    "quantitative-research",
+    "data-quality-audit",
+    "strategy-idea-mining",
+    "backtest-integrity",
+    "strategy-robustness-review",
+    "pair-trading-cointegration"
+  ],
+  "related_workflows": [
+    "systematic-strategy-research",
+    "pair-relative-value"
+  ],
+  "manual_review_required": true,
+  "execution_authorization": "NONE",
+  "recommended_skills": [
+    "backtest-integrity",
+    "data-quality-audit",
+    "downtrend-duration-study",
+    "edge-candidate-pipeline",
+    "event-cohort-study",
+    "failed-news-reaction-analysis",
+    "market-environment-regime-analysis",
+    "multi-factor-universe-screening",
+    "pair-trading-cointegration",
+    "pead-event-study",
+    "platform-backtest-parity-review",
+    "quantitative-research",
+    "signal-consensus-audit",
+    "strategy-drift-pivot-review",
+    "strategy-idea-mining",
+    "strategy-robustness-review",
+    "trade-hypothesis-formation",
+    "weekly-performance-review"
+  ]
+}
