@@ -3,254 +3,295 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080d12">
-  <meta name="description" content="MarketCouncil is a multi-agent trading research workbench for market analysis, adversarial thesis review, risk context, historical testing and paper environments.">
-  <meta property="og:title" content="MarketCouncil — Research the setup. Interrogate the trade.">
-  <meta property="og:description" content="A structured research desk for traders, analysts and systematic investors.">
+  <meta name="theme-color" content="#f4f3ee">
+  <meta name="description" content="MarketCouncil is an open-source trading research framework: 15 specialist roles, 74 playbooks, transparent OHLCV backtesting, deterministic risk tools and paper-trading adapters.">
+  <meta property="og:title" content="MarketCouncil — Trading research, built for scrutiny">
+  <meta property="og:description" content="A structured research process for traders, analysts and systematic investors.">
   <meta property="og:type" content="website">
-  <title>MarketCouncil — Trading Research Workbench</title>
+  <title>MarketCouncil — Trading Research Framework</title>
   <link rel="stylesheet" href="assets/site.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <a class="brand" href="#" aria-label="MarketCouncil home"><span class="brand-mark">MC</span><span>MARKET<span>COUNCIL</span></span></a>
+<header class="header">
+  <a class="wordmark" href="#" aria-label="MarketCouncil home">
+    <span class="wordmark-symbol" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span>MARKETCOUNCIL</span>
+  </a>
   <nav aria-label="Main navigation">
-    <a href="#markets">Markets</a><a href="#research">Research engine</a><a href="#report">Sample report</a><a href="#risk">Risk & controls</a>
+    <a href="#framework">Framework</a>
+    <a href="#markets">Market data</a>
+    <a href="#report">Research note</a>
+    <a href="#method">Methodology</a>
   </nav>
-  <a class="header-link" href="https://github.com/voyager67/Market-Council" target="_blank" rel="noopener">View project <span>↗</span></a>
+  <a class="header-action" href="https://github.com/voyager67/Market-Council" target="_blank" rel="noopener">Repository <span>↗</span></a>
 </header>
 
 <main id="main">
-  <div class="market-ribbon" aria-label="Supported market data paths">
-    <span class="ribbon-label">MARKET INPUTS</span>
-    <span><i class="asset-dot equity"></i>Equities</span>
-    <span><i class="asset-dot fx"></i>FX</span>
-    <span><i class="asset-dot crypto"></i>Crypto spot</span>
-    <span><i class="asset-dot futures"></i>Crypto futures</span>
-    <span><i class="asset-dot csv"></i>Local OHLCV</span>
-    <span class="ribbon-note">Provider access & symbol coverage vary</span>
-  </div>
-
   <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow"><span class="status-pulse"></span> MULTI-AGENT MARKET RESEARCH / OPEN SOURCE</p>
-      <h1>Research the setup.<br>Interrogate the <em>trade.</em></h1>
-      <p class="hero-lead">MarketCouncil is a trading research workbench that brings technical, fundamental, macro, quantitative and market-structure perspectives into one inspectable process—then asks a bull case and a bear case to challenge the thesis.</p>
+    <div class="hero-content">
+      <p class="eyebrow"><span class="eyebrow-line"></span> OPEN-SOURCE TRADING RESEARCH FRAMEWORK</p>
+      <h1>Trading research,<br>built for <em>scrutiny.</em></h1>
+      <p class="hero-description">MarketCouncil brings specialist market analysis, adversarial review and deterministic risk tools into one structured workflow. It helps traders and analysts examine a thesis from multiple perspectives before making their own decision.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="#report">See a research report <span>↘</span></a>
-        <a class="button button-outline" href="https://github.com/voyager67/Market-Council" target="_blank" rel="noopener">Explore the toolkit <span>↗</span></a>
+        <a class="button button-dark" href="#framework">Explore the framework <span>↓</span></a>
+        <a class="text-action" href="https://github.com/voyager67/Market-Council" target="_blank" rel="noopener">Read the source code <span>↗</span></a>
       </div>
-      <div class="hero-proof"><span>15 specialist roles</span><span>74 trader playbooks</span><span>Human decision stays with you</span></div>
+      <div class="hero-meta">
+        <span>15 defined research roles</span>
+        <span>74 specialist playbooks</span>
+        <span>Human decision boundary</span>
+      </div>
     </div>
 
-    <div class="terminal-shell" aria-label="Illustrative MarketCouncil market research workspace">
-      <div class="terminal-top">
-        <div class="window-dots"><i></i><i></i><i></i></div>
-        <span>MARKETCOUNCIL / RESEARCH DESK</span>
-        <b class="preview-label">ILLUSTRATIVE PREVIEW</b>
+    <figure class="research-visual" aria-label="Illustrative research note and price chart, not live market data">
+      <div class="visual-topline">
+        <span>MARKETCOUNCIL / RESEARCH SERIES</span>
+        <span>SPECIMEN 001</span>
       </div>
-      <div class="terminal-toolbar"><span class="toolbar-tab active">OVERVIEW</span><span class="toolbar-tab">WATCHLIST</span><span class="toolbar-tab">RESEARCH</span><span class="toolbar-right">SAMPLE WORKSPACE</span></div>
-      <div class="desk-grid">
-        <aside class="watchlist">
-          <div class="panel-heading">MARKET UNIVERSE <span>INPUTS</span></div>
-          <div class="watch-row"><span class="symbol-mark us">US</span><span class="watch-name"><b>US equities</b><small>Twelve Data · where supported</small></span><span class="feed-tag">DATA</span></div>
-          <div class="watch-row"><span class="symbol-mark fx">FX</span><span class="watch-name"><b>FX markets</b><small>Twelve Data · where supported</small></span><span class="feed-tag">DATA</span></div>
-          <div class="watch-row"><span class="symbol-mark btc">₿</span><span class="watch-name"><b>Crypto spot</b><small>Binance public market data</small></span><span class="feed-tag">DATA</span></div>
-          <div class="watch-row"><span class="symbol-mark fut">F</span><span class="watch-name"><b>USD-M futures</b><small>Binance public market data</small></span><span class="feed-tag">DATA</span></div>
-          <div class="watch-row"><span class="symbol-mark csv">CSV</span><span class="watch-name"><b>Bring your own</b><small>Validated OHLCV files</small></span><span class="feed-tag">LOCAL</span></div>
-          <div class="watch-foot">No live quotes are displayed on this product page.</div>
-        </aside>
-        <div class="chart-panel">
-          <div class="chart-title"><div><span class="chart-kicker">INSTRUMENT STUDY / SAMPLE</span><h3>Price structure</h3></div><span class="time-chip">1D · OHLCV</span></div>
-          <div class="chart-legend"><span><i class="legend-price"></i>Price bars</span><span><i class="legend-fast"></i>Trend study</span><span><i class="legend-volume"></i>Volume</span></div>
-          <svg class="market-chart" viewBox="0 0 560 225" role="img" aria-label="Illustrative candlestick and volume chart, not live market data">
-            <defs><linearGradient id="volFade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#537c67" stop-opacity=".7"/><stop offset="1" stop-color="#537c67" stop-opacity=".08"/></linearGradient></defs>
-            <g class="chart-grid"><path d="M0 28H560 M0 72H560 M0 116H560 M0 160H560 M0 204H560"/><path d="M80 0V210 M180 0V210 M280 0V210 M380 0V210 M480 0V210"/></g>
-            <path class="trend-line" d="M8 132 C46 125 60 132 92 118 S144 108 176 116 S230 94 262 99 S312 82 344 91 S393 65 424 77 S482 52 552 45"/>
-            <g class="candles">
-              <path class="wick up" d="M24 100V147 M44 88V132 M64 94V143 M84 76V118 M104 82V130 M124 73V113 M144 80V120 M164 64V106 M184 73V119 M204 68V101 M224 61V103 M244 48V90 M264 58V99 M284 44V82 M304 49V93 M324 34V77 M344 43V83 M364 28V72 M384 39V87 M404 26V65 M424 31V74 M444 17V60 M464 28V73 M484 15V55 M504 18V59 M524 7V49 M544 12V45"/>
-              <path class="body up" d="M18 115h12v17H18z M38 100h12v19H38z M58 111h12v17H58z M78 89h12v17H78z M98 101h12v16H98z M118 88h12v16h-12z M138 91h12v18h-12z M158 77h12v18h-12z M178 88h12v16h-12z M198 79h12v14h-12z M218 76h12v16h-12z M238 60h12v19h-12z M258 76h12v14h-12z M278 58h12v17h-12z M298 64h12v17h-12z M318 47h12v19h-12z M338 56h12v15h-12z M358 44h12v17h-12z M378 54h12v19h-12z M398 38h12v18h-12z M418 43h12v15h-12z M438 31h12v18h-12z M458 38h12v19h-12z M478 26h12v17h-12z M498 27h12v18h-12z M518 19h12v19h-12z M538 21h12v15h-12z"/>
-              <path class="body down" d="M78 89h12v17H78z M178 88h12v16h-12z M258 76h12v14h-12z M298 64h12v17h-12z M338 56h12v15h-12z M378 54h12v19h-12z M458 38h12v19h-12z"/>
-            </g>
-            <g class="volume-bars"><rect x="18" y="180" width="9" height="25"/><rect x="38" y="188" width="9" height="17"/><rect x="58" y="175" width="9" height="30"/><rect x="78" y="184" width="9" height="21"/><rect x="98" y="190" width="9" height="15"/><rect x="118" y="173" width="9" height="32"/><rect x="138" y="185" width="9" height="20"/><rect x="158" y="178" width="9" height="27"/><rect x="178" y="188" width="9" height="17"/><rect x="198" y="180" width="9" height="25"/><rect x="218" y="173" width="9" height="32"/><rect x="238" y="185" width="9" height="20"/><rect x="258" y="178" width="9" height="27"/><rect x="278" y="170" width="9" height="35"/><rect x="298" y="182" width="9" height="23"/><rect x="318" y="174" width="9" height="31"/><rect x="338" y="185" width="9" height="20"/><rect x="358" y="171" width="9" height="34"/><rect x="378" y="180" width="9" height="25"/><rect x="398" y="168" width="9" height="37"/><rect x="418" y="181" width="9" height="24"/><rect x="438" y="173" width="9" height="32"/><rect x="458" y="182" width="9" height="23"/><rect x="478" y="169" width="9" height="36"/><rect x="498" y="176" width="9" height="29"/><rect x="518" y="166" width="9" height="39"/><rect x="538" y="172" width="9" height="33"/></g>
-          </svg>
-          <div class="chart-axis"><span>BAR 01</span><span>HISTORICAL SERIES</span><span>BAR 27</span></div>
-          <div class="chart-insight"><span class="insight-icon">↗</span><span><b>What the desk does:</b> validate inputs, assess structure, test competing explanations and identify what still needs verification.</span></div>
+      <div class="visual-paper">
+        <div class="paper-heading">
+          <div>
+            <p class="paper-kicker">INSTRUMENT REVIEW / TECHNICAL STUDY</p>
+            <h2>Price structure<br>& participation</h2>
+          </div>
+          <div class="paper-index">FIG.<br><b>01</b></div>
         </div>
+        <div class="paper-meta">
+          <span>PERIOD <b>ILLUSTRATIVE</b></span>
+          <span>INTERVAL <b>DAILY</b></span>
+          <span>DATA <b>SYNTHETIC</b></span>
+        </div>
+        <svg class="price-figure" viewBox="0 0 620 258" role="img" aria-label="Synthetic candlestick price series with volume bars">
+          <defs>
+            <clipPath id="plotClip"><rect x="34" y="12" width="568" height="184"/></clipPath>
+          </defs>
+          <g class="plot-grid">
+            <path d="M34 24H602 M34 66H602 M34 108H602 M34 150H602 M34 192H602"/>
+            <path d="M105 12V196 M205 12V196 M305 12V196 M405 12V196 M505 12V196"/>
+          </g>
+          <g clip-path="url(#plotClip)">
+            <path class="reference-line" d="M34 144 C68 139 80 148 111 133 S165 123 194 133 S239 113 270 119 S318 97 348 105 S391 89 423 91 S470 69 501 78 S554 55 602 48"/>
+            <g class="candles">
+              <path class="wick up" d="M48 112V153 M69 98V137 M90 110V150 M111 87V132 M132 95V140 M153 81V126 M174 91V136 M195 72V119 M216 81V130 M237 75V117 M258 62V109 M279 51V101 M300 66V115 M321 55V98 M342 43V94 M363 50V104 M384 38V87 M405 47V103 M426 29V78 M447 35V85 M468 26V72 M489 34V83 M510 20V67 M531 25V74 M552 13V62 M573 17V55 M594 10V52"/>
+              <path class="body up" d="M43 125h10v14H43z M64 109h10v17H64z M85 125h10v13H85z M106 101h10v20h-10z M127 113h10v15h-10z M148 96h10v19h-10z M169 103h10v17h-10z M190 86h10v20h-10z M211 97h10v16h-10z M232 89h10v17h-10z M253 77h10v19h-10z M274 67h10v19h-10z M295 83h10v18h-10z M316 67h10v19h-10z M337 58h10v20h-10z M358 68h10v17h-10z M379 52h10v20h-10z M400 68h10v18h-10z M421 43h10v20h-10z M442 49h10v18h-10z M463 38h10v18h-10z M484 49h10v19h-10z M505 32h10v19h-10z M526 40h10v17h-10z M547 26h10v19h-10z M568 30h10v15h-10z M589 23h10v14h-10z"/>
+              <path class="body down" d="M85 125h10v13H85z M211 97h10v16h-10z M295 83h10v18h-10z M358 68h10v17h-10z M400 68h10v18h-10z M484 49h10v19h-10z M568 30h10v15h-10z"/>
+            </g>
+          </g>
+          <g class="volume-bars">
+            <rect x="44" y="214" width="8" height="23"/><rect x="65" y="222" width="8" height="15"/><rect x="86" y="209" width="8" height="28"/><rect x="107" y="217" width="8" height="20"/><rect x="128" y="224" width="8" height="13"/><rect x="149" y="207" width="8" height="30"/><rect x="170" y="216" width="8" height="21"/><rect x="191" y="210" width="8" height="27"/><rect x="212" y="221" width="8" height="16"/><rect x="233" y="214" width="8" height="23"/><rect x="254" y="205" width="8" height="32"/><rect x="275" y="218" width="8" height="19"/><rect x="296" y="211" width="8" height="26"/><rect x="317" y="203" width="8" height="34"/><rect x="338" y="215" width="8" height="22"/><rect x="359" y="208" width="8" height="29"/><rect x="380" y="219" width="8" height="18"/><rect x="401" y="205" width="8" height="32"/><rect x="422" y="213" width="8" height="24"/><rect x="443" y="201" width="8" height="36"/><rect x="464" y="214" width="8" height="23"/><rect x="485" y="206" width="8" height="31"/><rect x="506" y="216" width="8" height="21"/><rect x="527" y="203" width="8" height="34"/><rect x="548" y="211" width="8" height="26"/><rect x="569" y="199" width="8" height="38"/><rect x="590" y="205" width="8" height="32"/>
+          </g>
+          <g class="chart-labels"><text x="34" y="253">EARLIER BARS</text><text x="602" y="253" text-anchor="end">LATER BARS</text></g>
+        </svg>
+        <div class="paper-legend">
+          <span><i class="legend-candle"></i> OHLC series</span>
+          <span><i class="legend-trend"></i> Reference trend</span>
+          <span><i class="legend-volume"></i> Volume</span>
+        </div>
+        <div class="paper-caption">Illustrative visual only. No instrument, market price or performance data is represented.</div>
       </div>
-      <div class="terminal-bottom"><span><i></i> STATIC PRODUCT ILLUSTRATION</span><span>NOT A LIVE FEED · NOT A SIGNAL</span></div>
-    </div>
+      <figcaption class="visual-caption"><span>RESEARCH EXHIBIT</span><span>NOT A LIVE MARKET FEED</span></figcaption>
+    </figure>
   </section>
 
-  <section class="metrics" aria-label="MarketCouncil toolkit scale">
-    <div><strong>15</strong><span>specialist agent roles</span></div>
-    <div><strong>74</strong><span>trader-focused playbooks</span></div>
-    <div><strong>13</strong><span>repeatable workflows</span></div>
-    <div><strong>10</strong><span>trader skillsets</span></div>
-    <div class="metrics-note"><b>Research support.</b><br>Not an automated trading service.</div>
+  <section class="proof-strip" aria-label="Repository scope">
+    <div class="proof-item"><strong>15</strong><span>defined research roles</span></div>
+    <div class="proof-item"><strong>74</strong><span>specialist playbooks</span></div>
+    <div class="proof-item"><strong>13</strong><span>repeatable workflows</span></div>
+    <div class="proof-item"><strong>10</strong><span>trader skillsets</span></div>
+    <p>Counts describe the contents of the repository—not independent market sources or performance claims.</p>
   </section>
 
-  <section id="markets" class="section market-section">
-    <div class="section-heading">
-      <div><p class="eyebrow">01 / MARKET INPUTS</p><h2>Bring the market data.<br><em>Keep the evidence attached.</em></h2></div>
-      <p>MarketCouncil can work from connected provider data or validated local OHLCV files. The research should make clear what data was supplied, what timeframe was examined and where the gaps remain.</p>
+  <section id="framework" class="section framework-section">
+    <div class="section-intro">
+      <p class="section-number">01 <span>/</span> RESEARCH FRAMEWORK</p>
+      <h2>Different disciplines.<br><em>One reviewable process.</em></h2>
+      <p>Market questions rarely belong to one discipline. MarketCouncil assigns research responsibilities to defined roles, then brings the findings together for a structured challenge and synthesis.</p>
     </div>
-    <div class="market-cards">
-      <article class="market-card">
-        <div class="card-top"><span class="market-icon equity-icon">EQ</span><span class="source-status">OPTIONAL CONNECTOR</span></div>
-        <h3>Equities & FX</h3>
-        <p>Twelve Data REST historical bars and quote snapshots, plus optional WebSocket price ticks for supported symbols and account entitlements.</p>
-        <div class="market-tags"><span>Historical bars</span><span>Quote snapshots</span><span>Price ticks</span></div>
-      </article>
-      <article class="market-card">
-        <div class="card-top"><span class="market-icon crypto-icon">₿</span><span class="source-status">PUBLIC MARKET DATA</span></div>
-        <h3>Crypto spot & futures</h3>
-        <p>Binance public Spot and USD-M crypto-futures market data, including supported REST market endpoints and read-only trade streams.</p>
-        <div class="market-tags"><span>Spot</span><span>USD-M futures</span><span>Read-only streams</span></div>
-      </article>
-      <article class="market-card">
-        <div class="card-top"><span class="market-icon file-icon">CSV</span><span class="source-status">LOCAL INPUT</span></div>
-        <h3>Your own OHLCV</h3>
-        <p>Bring timestamped open, high, low, close and volume data. Validation checks ordering, uniqueness, finite values and candle consistency.</p>
-        <div class="market-tags"><span>Timestamp</span><span>OHLC</span><span>Volume</span></div>
-      </article>
-    </div>
-    <p class="section-footnote">Coverage is connector-specific. Exchange/vendor entitlements, delays, rate limits and data rights apply. The website preview does not connect to a live feed.</p>
-  </section>
-
-  <section id="research" class="section research-section">
-    <div class="section-heading">
-      <div><p class="eyebrow">02 / THE RESEARCH ENGINE</p><h2>One instrument.<br><em>Multiple independent lenses.</em></h2></div>
-      <p>Instead of returning one unchallenged model response, MarketCouncil assigns defined research responsibilities, collects structured findings and makes disagreement visible before synthesis.</p>
-    </div>
-    <div class="research-layout">
-      <div class="role-list">
-        <div class="role-row"><span class="role-index">01—06</span><div><b>Market & security analysts</b><small>Technical · Fundamental · Macro · Catalyst · Sentiment · Quant</small></div><span class="role-count">06</span></div>
-        <div class="role-row"><span class="role-index">07—11</span><div><b>Structure & instrument analysts</b><small>Microstructure · Derivatives · Crypto · Earnings · Institutional flow</small></div><span class="role-count">05</span></div>
-        <div class="role-row"><span class="role-index">12</span><div><b>Portfolio risk officer</b><small>Exposure · downside · liquidity · position constraints</small></div><span class="role-count">01</span></div>
-        <div class="role-row challenge-row"><span class="role-index">13—14</span><div><b>Bull & bear researchers</b><small>Counter-thesis · invalidation conditions · opposing evidence</small></div><span class="role-count">02</span></div>
-        <div class="role-row final-row"><span class="role-index">15</span><div><b>Synthesis director</b><small>Reconciles findings without hiding disagreement or missing data</small></div><span class="role-count">01</span></div>
+    <div class="framework-content">
+      <div class="discipline-list">
+        <article class="discipline">
+          <span class="discipline-no">01—06</span>
+          <div><h3>Market & security analysis</h3><p>Technical structure, fundamentals, macro context, catalysts, sentiment and quantitative research.</p></div>
+        </article>
+        <article class="discipline">
+          <span class="discipline-no">07—11</span>
+          <div><h3>Instrument & market structure</h3><p>Microstructure, derivatives, crypto markets, earnings and institutional-flow research.</p></div>
+        </article>
+        <article class="discipline">
+          <span class="discipline-no">12</span>
+          <div><h3>Portfolio risk</h3><p>Exposure, downside, liquidity, position constraints and risk assumptions.</p></div>
+        </article>
+        <article class="discipline challenge-discipline">
+          <span class="discipline-no">13—14</span>
+          <div><h3>Adversarial review</h3><p>Bull and bear researchers construct opposing cases and identify thesis-invalidation conditions.</p></div>
+        </article>
+        <article class="discipline synthesis-discipline">
+          <span class="discipline-no">15</span>
+          <div><h3>Research synthesis</h3><p>The synthesis director consolidates findings while retaining disagreement, uncertainty and missing evidence.</p></div>
+        </article>
       </div>
-      <aside class="research-aside">
-        <p class="aside-label">THE OUTPUT</p>
-        <h3>A research brief built for review.</h3>
-        <ul>
-          <li>Thesis and supporting evidence</li>
-          <li>Bull case and bear case</li>
-          <li>Relevant catalysts and context</li>
-          <li>Data gaps and source limitations</li>
-          <li>Risk observations and watch conditions</li>
-          <li>Confidence with its reasoning</li>
-        </ul>
-        <div class="aside-rule"><span>FINAL AUTHORITY</span><b>Human trader / analyst</b></div>
+      <aside class="framework-note">
+        <p class="note-label">DESIGN PRINCIPLE</p>
+        <p class="note-quote">A consensus is not evidence. A thesis should be examined alongside the strongest case against it.</p>
+        <div class="note-rule"></div>
+        <p class="note-small">Agent agreement is not independent confirmation. Roles may share the same underlying data and model provider.</p>
       </aside>
     </div>
   </section>
 
-  <section id="report" class="section report-section">
-    <div class="section-heading">
-      <div><p class="eyebrow">03 / WHAT A REPORT LOOKS LIKE</p><h2>Decision support.<br><em>Not a buy/sell alert.</em></h2></div>
-      <p>A useful report should help a trader understand the setup, the opposing view, the quality of the evidence and the risks that could invalidate the idea—not simply produce a confident-sounding target.</p>
+  <section id="markets" class="section data-section">
+    <div class="section-intro">
+      <p class="section-number">02 <span>/</span> DATA & INSTRUMENTS</p>
+      <h2>Know what went<br><em>into the analysis.</em></h2>
+      <p>MarketCouncil connects to selected provider endpoints or works from local historical bars. Coverage depends on the provider, instrument catalogue and account entitlement.</p>
     </div>
-    <article class="report-board">
-      <div class="report-head">
-        <div><span class="report-kicker">MARKETCOUNCIL / RESEARCH BRIEF</span><h3>Instrument research review</h3><p>Illustrative report layout · synthetic example · no live instrument data</p></div>
-        <div class="report-stamp">SAMPLE<br>ONLY</div>
-      </div>
-      <div class="report-meta"><span>INSTRUMENT <b>DEMO-ASSET</b></span><span>MARKET <b>EXAMPLE</b></span><span>TIMEFRAME <b>1D</b></span><span>DATA STATUS <b>ILLUSTRATIVE</b></span></div>
-      <div class="report-thesis">
-        <div><span class="report-label">RESEARCH QUESTION</span><h4>Is the current structure supported by enough evidence to justify further review?</h4></div>
-        <div class="review-state"><span class="state-dot"></span> HUMAN REVIEW REQUIRED</div>
-      </div>
-      <div class="report-columns">
-        <div class="report-column">
-          <span class="case-label positive">01 / SUPPORTING CASE</span>
-          <h4>What could support the thesis</h4>
-          <ul><li>Price structure and trend context are consistent with the proposed scenario.</li><li>Volume and relative strength observations warrant further comparison.</li><li>A defined catalyst or event window may explain the change in participation.</li></ul>
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead><tr><th>Source</th><th>Implemented data path</th><th>Scope & limitation</th></tr></thead>
+        <tbody>
+          <tr>
+            <th><span class="source-name">Twelve Data</span><span class="source-type">OPTIONAL CONNECTOR</span></th>
+            <td>Historical OHLCV, quote snapshots and optional WebSocket price events.</td>
+            <td>Equities, FX, crypto and selected listed instruments, subject to symbol catalogue, subscription and exchange entitlement.</td>
+          </tr>
+          <tr>
+            <th><span class="source-name">Binance</span><span class="source-type">PUBLIC MARKET DATA</span></th>
+            <td>Spot and USD-M historical klines, quote snapshots and read-only trade streams.</td>
+            <td>Crypto spot and USD-M futures/perpetual markets. The connector does not provide a universal equities or FX feed.</td>
+          </tr>
+          <tr>
+            <th><span class="source-name">Local OHLCV</span><span class="source-type">USER-SUPPLIED INPUT</span></th>
+            <td>Validated timestamp, open, high, low, close and volume series.</td>
+            <td>Data provenance, corporate-action adjustments, universe selection and timestamp correctness remain the operator's responsibility.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="table-note">Streaming is read-only JSONL. Automatic reconnect, sequence-gap recovery, persistent tick storage and provider failover are not implemented.</p>
+    </div>
+  </section>
+
+  <section id="report" class="section report-section">
+    <div class="section-intro">
+      <p class="section-number">03 <span>/</span> THE RESEARCH NOTE</p>
+      <h2>The output is a brief,<br><em>not a trading signal.</em></h2>
+      <p>The point of the process is not to manufacture certainty. It is to organise the evidence, record the opposing view and make the remaining questions visible to the person responsible for the decision.</p>
+    </div>
+
+    <article class="note-specimen">
+      <header class="specimen-header">
+        <div>
+          <p class="specimen-overline">MARKETCOUNCIL <span>/</span> RESEARCH NOTE</p>
+          <h3>Instrument & market review</h3>
+          <p class="specimen-subtitle">Illustrative report structure · synthetic example · not a market recommendation</p>
         </div>
-        <div class="report-column">
-          <span class="case-label negative">02 / CHALLENGE CASE</span>
-          <h4>What could invalidate it</h4>
-          <ul><li>The move may be extended or dependent on a narrow group of bars.</li><li>Liquidity, volatility or event risk may change the execution profile.</li><li>Alternative explanations or contradictory data may weaken the thesis.</li></ul>
-        </div>
+        <div class="specimen-classification">SPECIMEN<br><b>01</b></div>
+      </header>
+      <div class="specimen-meta">
+        <div><span>INSTRUMENT</span><b>Example only</b></div>
+        <div><span>TIMEFRAME</span><b>Supplied by user</b></div>
+        <div><span>DATA SOURCE</span><b>Recorded in context</b></div>
+        <div><span>REVIEW STATUS</span><b class="status-review">Human review required</b></div>
       </div>
-      <div class="report-bottom">
-        <div><span class="report-label">EVIDENCE & DATA GAPS</span><p>Source timestamps, missing fields, adjustment assumptions and unverified claims should be recorded before relying on the analysis.</p></div>
-        <div><span class="report-label">RISK REVIEW</span><p>Position sizing is deterministic code, based on supplied inputs and stated assumptions. It is not a model-generated trade instruction.</p></div>
-        <div><span class="report-label">NEXT REVIEW CONDITIONS</span><p>Define the evidence or market conditions that would strengthen, weaken or invalidate the working thesis.</p></div>
+      <div class="specimen-question">
+        <span class="specimen-label">RESEARCH QUESTION</span>
+        <h4>What evidence supports the working thesis, and what would invalidate it?</h4>
       </div>
-      <div class="report-disclaimer">This is a schematic example of report sections, not an actual research recommendation, forecast, backtest result or trading signal.</div>
+      <div class="specimen-columns">
+        <section>
+          <span class="view-label view-positive">01 / SUPPORTING EVIDENCE</span>
+          <h4>What is consistent with the thesis?</h4>
+          <ul>
+            <li>Relevant price structure and timeframe observations.</li>
+            <li>Supporting volume, relative-strength or fundamental context, where supplied.</li>
+            <li>Potential catalyst and event context requiring source verification.</li>
+          </ul>
+        </section>
+        <section>
+          <span class="view-label view-negative">02 / COUNTER-EVIDENCE</span>
+          <h4>What weakens the thesis?</h4>
+          <ul>
+            <li>Contradictory market, fundamental or positioning evidence.</li>
+            <li>Liquidity, volatility or event risks that change the setup.</li>
+            <li>Assumptions, missing inputs or alternative explanations.</li>
+          </ul>
+        </section>
+      </div>
+      <div class="specimen-bottom">
+        <div><span class="specimen-label">DATA & PROVENANCE</span><p>Source, publication time, retrieval time, reporting period and known lag—when supplied.</p></div>
+        <div><span class="specimen-label">RISK OBSERVATIONS</span><p>Exposure, downside assumptions, liquidity and limitations of any sizing estimate.</p></div>
+        <div><span class="specimen-label">REVIEW CONDITIONS</span><p>Evidence that would strengthen, weaken or invalidate the working thesis.</p></div>
+      </div>
+      <footer class="specimen-footer">Schematic report specimen. It contains no actual instrument data, live prices, price targets, forecasts or performance results.</footer>
     </article>
   </section>
 
-  <section class="section workflow-section">
-    <div class="section-heading">
-      <div><p class="eyebrow">04 / FROM QUESTION TO BRIEF</p><h2>A process you can <em>inspect.</em></h2></div>
-      <p>Research runs through defined stages. Each stage has an input and expected output, with a human decision boundary before any real-world action.</p>
+  <section id="method" class="section method-section">
+    <div class="section-intro">
+      <p class="section-number">04 <span>/</span> TESTING & RISK</p>
+      <h2>Useful tools.<br><em>Clearly stated limits.</em></h2>
+      <p>The research framework is supported by practical testing and paper environments. Their boundaries are documented rather than hidden behind a production claim.</p>
     </div>
-    <div class="workflow">
-      <div class="workflow-step"><span>01</span><h3>Define the question</h3><p>Instrument, timeframe, objective, source data and relevant context.</p></div>
-      <div class="workflow-step"><span>02</span><h3>Run specialists</h3><p>Collect structured analysis across market, security, instrument and risk domains.</p></div>
-      <div class="workflow-step"><span>03</span><h3>Challenge the thesis</h3><p>Bull and bear reviewers test assumptions, counter-evidence and invalidation conditions.</p></div>
-      <div class="workflow-step"><span>04</span><h3>Synthesise & review</h3><p>Produce a traceable brief, expose uncertainty and leave the decision with the human.</p></div>
+    <div class="method-grid">
+      <article>
+        <span class="method-index">A</span>
+        <h3>Historical backtesting</h3>
+        <p>A single-instrument OHLCV engine. Signals use completed bars; position changes fill at the next bar open, with configurable simplified commission and slippage.</p>
+        <a href="https://github.com/voyager67/Market-Council/blob/main/docs/LIVE_DATA_AND_BACKTESTING.md">Backtesting methodology ↗</a>
+      </article>
+      <article>
+        <span class="method-index">B</span>
+        <h3>Deterministic risk sizing</h3>
+        <p>Code-based linear per-unit sizing and risk constraints from supplied inputs. It does not model derivatives payoffs, contract multipliers, margin, borrow, funding or market impact.</p>
+        <a href="https://github.com/voyager67/Market-Council/blob/main/docs/RISK_AND_VALIDATION.md">Risk & validation ↗</a>
+      </article>
+      <article>
+        <span class="method-index">C</span>
+        <h3>Paper & test execution</h3>
+        <p>Local SQLite cash-equity simulation, Alpaca Paper LIMIT orders and Binance Spot Testnet LIMIT orders. Adapters use fixed paper/test endpoints.</p>
+        <a href="https://github.com/voyager67/Market-Council/blob/main/docs/PAPER_TRADING_API.md">Paper adapter details ↗</a>
+      </article>
+    </div>
+    <div class="execution-boundary">
+      <div class="boundary-mark">!</div>
+      <div><b>No live-money execution adapter is included.</b><p>MarketCouncil is research software, not a broker or investment adviser. AI output, paper results and backtests do not authorise a trade or guarantee an outcome.</p></div>
     </div>
   </section>
 
-  <section class="section toolkit-section">
-    <div class="section-heading">
-      <div><p class="eyebrow">05 / THE TRADER TOOLKIT</p><h2>Research, test and<br><em>manage risk.</em></h2></div>
-      <p>Beyond multi-agent analysis, the repository includes small, inspectable tools for historical experiments, risk calculations and paper/test environments.</p>
+  <section class="section start-section">
+    <div class="start-copy">
+      <p class="section-number">05 <span>/</span> GET STARTED</p>
+      <h2>Inspect the framework.<br><em>Run the offline demo.</em></h2>
+      <p>Start with the deterministic demo. It does not require market-data credentials or a hosted model API key.</p>
+      <a href="https://github.com/voyager67/Market-Council#quick-start" class="text-action">Read the quick-start guide ↗</a>
     </div>
-    <div class="toolkit-grid">
-      <article><span class="tool-icon">01</span><h3>Research playbooks</h3><p>74 Markdown skills with defined inputs, methods, evidence standards and expected outputs.</p><a href="https://github.com/voyager67/Market-Council/tree/main/skills">Browse trader skills ↗</a></article>
-      <article><span class="tool-icon">02</span><h3>Repeatable workflows</h3><p>13 workflow sequences and 10 skillsets covering market reviews, earnings, options, futures, crypto, systematic research and portfolio risk.</p><a href="https://github.com/voyager67/Market-Council/tree/main/workflows">Explore workflows ↗</a></article>
-      <article><span class="tool-icon">03</span><h3>Historical backtesting</h3><p>Single-instrument OHLCV engine: completed-bar signals, next-bar-open fills and configurable simplified costs.</p><a href="https://github.com/voyager67/Market-Council/blob/main/docs/LIVE_DATA_AND_BACKTESTING.md">Read methodology ↗</a></article>
-      <article><span class="tool-icon">04</span><h3>Deterministic risk tools</h3><p>Position sizing and risk constraints are calculated in code, separate from AI-generated research opinions.</p><a href="https://github.com/voyager67/Market-Council/blob/main/docs/RISK_AND_VALIDATION.md">Review risk notes ↗</a></article>
-      <article><span class="tool-icon">05</span><h3>Paper & test adapters</h3><p>Local SQLite paper simulation, Alpaca Paper and Binance Spot Testnet LIMIT adapter.</p><a href="https://github.com/voyager67/Market-Council/blob/main/docs/PAPER_TRADING_API.md">Adapter details ↗</a></article>
-      <article><span class="tool-icon">06</span><h3>Audit & API foundation</h3><p>Optional tenant-scoped API, SQLite persistence and audit-event insertion. Not an enterprise-certified service.</p><a href="https://github.com/voyager67/Market-Council/tree/main/docs">Technical documentation ↗</a></article>
-    </div>
-  </section>
-
-  <section class="quickstart-section">
-    <div class="quickstart-copy"><p class="eyebrow">06 / GET STARTED</p><h2>Run the demo.<br><em>Inspect the mechanics.</em></h2><p>Start with the offline deterministic demo. No market-data credentials or hosted AI-provider API keys are required for this first run.</p><a class="inline-link" href="https://github.com/voyager67/Market-Council#quick-start">Read the full setup guide ↗</a></div>
-    <div class="code-panel"><div class="code-head"><span>LOCAL TERMINAL</span><span>PYTHON 3.11+</span></div><pre><code><i>$</i> git clone https://github.com/voyager67/Market-Council.git
+    <div class="command-card">
+      <div class="command-heading"><span>LOCAL ENVIRONMENT</span><span>PYTHON 3.11+</span></div>
+      <pre><code><i>$</i> git clone https://github.com/voyager67/Market-Council.git
 <i>$</i> cd Market-Council
 <i>$</i> python -m venv .venv
 <i>$</i> source .venv/bin/activate
 <i>$</i> pip install -e .
-<i>$</i> market-council demo --format markdown</code></pre><div class="code-foot">Offline demo · synthetic data · human review required</div></div>
-  </section>
-
-  <section id="risk" class="risk-section">
-    <div><p class="eyebrow">07 / RISK, EXECUTION & RESPONSIBLE USE</p><h2>Built to inform.<br><em>Not to take control.</em></h2></div>
-    <div class="risk-copy">
-      <p>MarketCouncil is research software, not a broker, exchange, investment adviser or automated signal service. It does not guarantee accuracy, predict outcomes or promise returns. AI outputs and third-party market data can be incomplete, delayed or wrong.</p>
-      <div class="boundary-grid">
-        <div><b>Backtesting</b><span>Simplified single-instrument simulation; not venue-grade execution modelling.</span></div>
-        <div><b>Paper environments</b><span>Local paper, Alpaca Paper and Binance Spot Testnet only.</span></div>
-        <div><b>Live trading</b><span>No live-money order adapter is included in this project.</span></div>
-        <div><b>Final decision</b><span>Verify sources, assumptions, product rules and risk independently.</span></div>
-      </div>
-      <div class="risk-links"><a href="https://github.com/voyager67/Market-Council/blob/main/SECURITY.md">Security policy ↗</a><a href="https://github.com/voyager67/Market-Council/blob/main/docs/RISK_AND_VALIDATION.md">Risk & validation ↗</a><a href="https://github.com/voyager67/Market-Council/blob/main/PROVENANCE.md">Provenance ↗</a></div>
+<i>$</i> market-council demo --format markdown</code></pre>
+      <div class="command-caption">OFFLINE DEMO <span>·</span> SYNTHETIC DATA <span>·</span> HUMAN REVIEW REQUIRED</div>
     </div>
   </section>
 
   <section class="closing">
-    <p class="eyebrow">MARKETCOUNCIL / RESEARCH WORKBENCH</p>
-    <h2>Make the thesis<br><em>earn its conviction.</em></h2>
-    <p>Explore the open-source research engine, inspect the playbooks and run the offline demo.</p>
-    <a class="button button-primary" href="https://github.com/voyager67/Market-Council" target="_blank" rel="noopener">Explore MarketCouncil on GitHub ↗</a>
+    <p class="eyebrow">MARKETCOUNCIL / OPEN SOURCE</p>
+    <h2>Better research begins<br>with better questions.</h2>
+    <p>Explore the roles, playbooks, workflows and implementation details in the repository.</p>
+    <a class="button button-light" href="https://github.com/voyager67/Market-Council" target="_blank" rel="noopener">Explore MarketCouncil on GitHub <span>↗</span></a>
   </section>
 </main>
 
-<footer class="site-footer">
-  <a class="brand" href="#"><span class="brand-mark">MC</span><span>MARKET<span>COUNCIL</span></span></a>
-  <span>Independent research workflow. Human decisions.</span>
-  <span>© 2026 MarketCouncil · MIT License</span>
+<footer class="footer">
+  <a class="wordmark" href="#"><span class="wordmark-symbol" aria-hidden="true"><i></i><i></i><i></i></span><span>MARKETCOUNCIL</span></a>
+  <span>Trading research framework · MIT License</span>
+  <div><a href="https://github.com/voyager67/Market-Council/blob/main/SECURITY.md">Security</a><a href="https://github.com/voyager67/Market-Council/blob/main/PROVENANCE.md">Provenance</a><a href="https://github.com/voyager67/Market-Council">GitHub ↗</a></div>
 </footer>
 </body>
 </html>
