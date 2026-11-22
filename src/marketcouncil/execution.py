@@ -13,7 +13,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from dataclasses import dataclass
-from typing import Callable
+from collections.abc import Callable
 
 
 class ExecutionError(RuntimeError):

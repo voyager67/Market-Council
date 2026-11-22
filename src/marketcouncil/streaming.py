@@ -15,7 +15,8 @@ import os
 import re
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
-from typing import Any, AsyncIterator, Callable
+from collections.abc import AsyncIterator, Callable
+from typing import Any
 from urllib.parse import urlencode
 
 from .marketdata import MarketDataError
@@ -220,7 +221,7 @@ async def stream_twelvedata_prices(
             wait = max(0.05, next_heartbeat - loop.time())
             try:
                 raw = await asyncio.wait_for(websocket.recv(), timeout=wait)
-            except asyncio.TimeoutError:
+            except TimeoutError:
                 await websocket.send(json.dumps({"action": "heartbeat"}))
                 next_heartbeat = loop.time() + heartbeat_seconds
                 continue

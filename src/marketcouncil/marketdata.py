@@ -17,7 +17,8 @@ import urllib.request
 from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from pathlib import Path
-from typing import Callable, Protocol
+from collections.abc import Callable
+from typing import Protocol
 
 from .models import Bar
 
