@@ -314,13 +314,13 @@ ruff check .
 pytest -q
 python -m compileall -q src tests scripts
 bandit -q -r src/marketcouncil
-pip-audit
+pip-audit --skip-editable
 market-council demo --format json
 ```
 
 The local source-tree verification recorded **121 passing tests**, successful repository/skill/workflow validation, and a successful offline 15-agent demo with `HUMAN_REVIEW_REQUIRED` and `execution_authorization: NONE`.
 
-Ruff, Bandit and pip-audit were not run in the preparation environment because those tools were unavailable offline. The included GitHub Actions workflow runs them in CI. Review the first hosted CI run before treating the repository as release-cleared. See [`docs/VERIFICATION.md`](docs/VERIFICATION.md).
+The hosted GitHub Actions matrix passed on **Python 3.11, 3.12 and 3.13** at commit `c3b2560` on 2026-11-22. All jobs passed repository validation, generated-index checks, Ruff, the 121-test suite, Bandit, `pip-audit --skip-editable`, wheel build/install verification, the offline multi-agent demo and its human-review/execution-boundary assertions. [View the successful CI run](https://github.com/voyager67/Market-Council-/actions/runs/45009451989). See [`docs/VERIFICATION.md`](docs/VERIFICATION.md) for local verification limits and checks not covered by CI.
 
 ## Security & risk boundaries
 

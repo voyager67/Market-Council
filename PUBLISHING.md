@@ -24,7 +24,7 @@ python scripts/build_skill_catalog.py --check
 ruff check .
 pytest -q
 bandit -q -r src/marketcouncil
-pip-audit
+pip-audit --skip-editable
 python -m build
 market-council demo --format json
 ```

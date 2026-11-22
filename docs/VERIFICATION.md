@@ -25,7 +25,7 @@ python -m compileall -q src tests scripts
 pytest -q
 ruff check .
 bandit -q -r src/marketcouncil
-pip-audit
+pip-audit --skip-editable
 market-council skills validate
 market-council workflows validate
 market-council demo --format json
@@ -33,10 +33,13 @@ market-council demo --format json
 
 The local checks cover schema contracts, source/package mirrors, skill-to-agent routing, workflow and skillset references, local Markdown links, secret-pattern scanning, CSV/context validation, provider response parsing and redirect rejection, backtest timing/cost boundaries, atomic audit writes, authentication/session expiry and revocation, tenant isolation, local paper trading, sandbox order signatures and API route behaviour. The latest deterministic test output was `121 passed`.
 
+## Hosted CI result
+
+The hosted GitHub Actions matrix passed on **Python 3.11, 3.12 and 3.13** at commit `c3b2560` on 2026-11-22. All jobs passed repository validation, generated-index checks, Ruff, the 121-test suite, Bandit, `pip-audit --skip-editable`, wheel build/install verification, the offline multi-agent demo and its human-review/execution-boundary assertions. [View the successful CI run](https://github.com/voyager67/Market-Council-/actions/runs/45009451989).
+
 ## Not verified locally
 
-- Ruff lint was not run because the executable was unavailable in the offline environment. CI includes Ruff.
-- Bandit and pip-audit results must be checked in the hosted CI environment if those tools are unavailable locally.
+- Ruff, Bandit and pip-audit were not run inside the original offline preparation container; all three checks subsequently passed in the hosted CI matrix recorded above.
 - Docker image build, Nginx configuration validation, host-level TLS, secrets manager, backup/restore, firewall, monitoring and incident-response setup were not exercised in this container.
 - Twelve Data, Binance, Alpaca Paper, hosted AI provider, and any real account credentials or rate-limit entitlements were not exercised against the live external services. Provider tests use controlled fixtures.
 - Live provider connections were not exercised against external vendor accounts; native WebSocket message parsing, subscription failure handling and CLI wiring are covered by offline fixtures. Automatic reconnect/resubscribe, sequence-gap recovery, persistent tick storage, live news/filings/calendar ingestion and provider failover are not implemented.
