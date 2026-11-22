@@ -32,7 +32,7 @@ jobs:
       - name: Static security scan
         run: bandit -q -r src/marketcouncil
       - name: Dependency vulnerability scan
-        run: pip-audit
+        run: pip-audit --skip-editable
       - name: Build and verify wheel
         run: |
           python -m build
