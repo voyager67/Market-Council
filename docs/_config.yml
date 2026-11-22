@@ -1,0 +1,17 @@
+title: MarketCouncil
+description: Trading research workbench
+theme: null
+markdown: kramdown
+plugins: []
+exclude:
+  - README.md
+  - LICENSE
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - PUBLISHING.md
+  - src
+  - tests
+  - scripts
+  - skills
+  - workflows
+  - skillsets
